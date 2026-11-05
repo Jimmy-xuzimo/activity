@@ -1888,3 +1888,8 @@ body, .topbar, .panel, .heatmap, .repo-card, .modal { transition: background-col
 .month > summary:hover .month-head__label { color: var(--accent); }
 .month-toggle::after { content: "展开 +"; margin-left: 1em; color: var(--accent); }
 .month[open] .month-toggle::after { content: "收起 −"; }
+
+.month:not([open]) > :not(summary) { display: none; }
+.month { margin-top: 0; }
+.month-head { padding: 18px 0; margin-bottom: 0; }
+.month[open] .month-head { margin-bottom: 14px; }

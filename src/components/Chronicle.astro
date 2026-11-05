@@ -87,13 +87,13 @@ const groupStats = (commits: ActivityEvent[]) => {
   <div class="chronicle">
     {
       months.map((month) => (
-        <details class="month reveal">
+        <details class="month">
           <summary class="month-head">
             <span class="month-head__label serif">
               <b>{month.year}</b>
               {month.month}
             </span>
-            <span class="month-head__count">{fmtInt(month.count)} 条 <span class="month-toggle" aria-hidden="true"></span></span>
+            <span class="month-head__count">{fmtInt(month.count)} 条活动 <span class="month-toggle" aria-hidden="true"></span></span>
           </summary>
 
           {month.days.map((day) => (
