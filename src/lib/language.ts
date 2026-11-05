@@ -1,4 +1,7 @@
 const replacements: [RegExp, string][] = [
+[/条记录。缩放时间轴探索不同日期，点击活动圆点查看详情。/g,' records. Zoom through time and select activity markers for details.'],
+
+[/Archive \/ 完整月份列表/g,'Monthly archive'],
 [/私有项目/g,'Private project'],[/六 (\d)/g,'Sat $1'],[/一 (\d)/g,'Mon $1'],[/二 (\d)/g,'Tue $1'],[/三 (\d)/g,'Wed $1'],[/四 (\d)/g,'Thu $1'],[/五 (\d)/g,'Fri $1'],[/日 (\d)/g,'Sun $1'],
 
 [/提交只统计自有仓库的默认分支，/g,'Commits on default branches of owned repositories: '],
@@ -31,7 +34,7 @@ function translate(root: Node) {
   while (walker.nextNode()) nodes.push(walker.currentNode as Text);
   for (const node of nodes) {
     const parent = node.parentElement;
-    if (!parent || parent.closest('script, style, .event__title, .repo-card__desc, .modal__desc, .commit-row__msg, .commit-summary__preview, .modal__release')) { if (node.data.trim() !== '没有填写描述。') continue; }
+    if (!parent || parent.closest('.time-explorer, script, style, .event__title, .repo-card__desc, .modal__desc, .commit-row__msg, .commit-summary__preview, .modal__release')) { if (node.data.trim() !== '没有填写描述。') continue; }
     const original = originals.get(node) ?? node.data;
     if (!originals.has(node)) originals.set(node, original);
     let value = original; if (/^[一二三四五六日]$/.test(original.trim())) { const names:Record<string,string>={一:'Mon',二:'Tue',三:'Wed',四:'Thu',五:'Fri',六:'Sat',日:'Sun'}; if (lang === 'en') { node.data=names[original.trim()]; continue; } }

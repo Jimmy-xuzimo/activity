@@ -1,4 +1,5 @@
 ---
+import Timeline from './Timeline.astro';
 import { events, REPO_COLORS } from '../lib/data.ts';
 import {
   localDateISO,
@@ -74,16 +75,18 @@ const groupStats = (commits: ActivityEvent[]) => {
   <header class="sec-head reveal">
     <div class="sec-head__left">
       <span class="sec-head__index">
-        <span class="label">01 / Chronicle</span>
+        <span class="label">03 / Chronicle</span>
         <span class="sec-head__rule" aria-hidden="true"></span>
       </span>
       <h2 id="chronicle-title" class="section-heading">编年史</h2>
     </div>
     <p class="sec-head__note note">
-      按北京时间顺序排列的 {fmtInt(events.length)} 条记录。点击月份展开详情，同一天的多次提交也可以展开。
+      按北京时间顺序排列的 {fmtInt(events.length)} 条记录。缩放时间轴探索不同日期，点击活动圆点查看详情。
     </p>
   </header>
 
+  <Timeline />
+  <details class="time-archive"><summary>Archive / 完整月份列表</summary>
   <div class="chronicle">
     {
       months.map((month) => (
@@ -213,6 +216,7 @@ const groupStats = (commits: ActivityEvent[]) => {
     }
   </div>
 
+  </details>
   <div class="chronicle__foot">
     <span class="label">Caliber</span>
     <span class="note">
