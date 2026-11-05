@@ -213,7 +213,7 @@
     "url": "https://github.com/Jimmy-xuzimo/Chronos-Monitoring",
     "homepageUrl": "https://jimmy-xuzimo.github.io/Chronos-Monitoring/",
     "createdAt": "2026-01-05T12:27:05Z",
-    "pushedAt": "2026-11-04T10:57:05Z",
+    "pushedAt": "2026-11-05T12:30:18Z",
     "isFork": false,
     "isArchived": false,
     "primaryLanguage": {
@@ -233,9 +233,9 @@
     "diskUsage": 17246,
     "defaultBranch": "main",
     "totals": {
-      "commits": 17,
-      "additions": 27210,
-      "deletions": 22534,
+      "commits": 18,
+      "additions": 27391,
+      "deletions": 22541,
       "releases": 3,
       "issues": 0,
       "pullRequests": 0,
@@ -246,60 +246,60 @@
       {
         "name": "Kotlin",
         "bytes": 155144,
-        "pct": 0.32114328533075004,
+        "pct": 0.31740030605815106,
         "color": "#A97BFF"
       },
       {
         "name": "Python",
-        "bytes": 112970,
-        "pct": 0.23384440870297807,
+        "bytes": 113705,
+        "pct": 0.2326226073863125,
         "color": "#3572A5"
       },
       {
         "name": "TypeScript",
         "bytes": 86818,
-        "pct": 0.17971057692108658,
+        "pct": 0.17761601977102923,
         "color": "#3178c6"
       },
       {
         "name": "Java",
         "bytes": 47071,
-        "pct": 0.09743551528775675,
+        "pct": 0.09629988788778959,
         "color": "#b07219"
       },
       {
         "name": "C#",
         "bytes": 44091,
-        "pct": 0.09126700738357976,
+        "pct": 0.09020327498588368,
         "color": "#7355dd"
       },
       {
         "name": "HTML",
-        "bytes": 16435,
-        "pct": 0.03401994208226471,
+        "bytes": 21167,
+        "pct": 0.043304364192833004,
         "color": "#e34c26"
       },
       {
         "name": "CSS",
         "bytes": 11724,
-        "pct": 0.024268317674017128,
+        "pct": 0.0239854663295117,
         "color": "#663399"
       },
       {
         "name": "JavaScript",
-        "bytes": 7068,
-        "pct": 0.01463054156601442,
+        "bytes": 7298,
+        "pct": 0.014930564079902455,
         "color": "#f1e05a"
       },
       {
         "name": "PowerShell",
         "bytes": 1778,
-        "pct": 0.0036804050515525802,
+        "pct": 0.0036375093085868134,
         "color": "#012456"
       }
     ],
     "firstCommitAt": "2026-01-05T12:27:28Z",
-    "lastCommitAt": "2026-11-04T10:49:08Z"
+    "lastCommitAt": "2026-11-05T12:30:16Z"
   },
   {
     "id": "R_kgDOQ0EIjQ",
@@ -319,7 +319,7 @@
     "topics": [],
     "stars": 1,
     "forks": 0,
-    "diskUsage": 701,
+    "diskUsage": 706,
     "defaultBranch": "main",
     "totals": {
       "commits": 43,
@@ -1478,7 +1478,7 @@
     "url": "https://github.com/Jimmy-xuzimo/Chronos-Widgets",
     "homepageUrl": "https://jimmy-xuzimo.github.io/Chronos-Widgets/",
     "createdAt": "2026-11-04T03:05:39Z",
-    "pushedAt": "2026-11-04T09:36:03Z",
+    "pushedAt": "2026-11-05T12:30:11Z",
     "isFork": false,
     "isArchived": false,
     "primaryLanguage": {
@@ -1491,9 +1491,9 @@
     "diskUsage": 1472,
     "defaultBranch": "main",
     "totals": {
-      "commits": 6,
-      "additions": 7405,
-      "deletions": 115,
+      "commits": 7,
+      "additions": 7583,
+      "deletions": 119,
       "releases": 4,
       "issues": 0,
       "pullRequests": 0,
@@ -1504,42 +1504,42 @@
       {
         "name": "C#",
         "bytes": 237980,
-        "pct": 0.8967416903117381,
+        "pct": 0.8779249716863847,
         "color": "#7355dd"
       },
       {
         "name": "HTML",
-        "bytes": 12683,
-        "pct": 0.04779130539635169,
+        "bytes": 17406,
+        "pct": 0.06421195922839404,
         "color": "#e34c26"
       },
       {
         "name": "Inno Setup",
         "bytes": 5581,
-        "pct": 0.021029983081056434,
+        "pct": 0.02058870185302006,
         "color": "#264b99"
       },
       {
         "name": "Python",
-        "bytes": 3992,
-        "pct": 0.015042410403077815,
+        "bytes": 4727,
+        "pct": 0.017438235738976137,
         "color": "#3572A5"
       },
       {
         "name": "JavaScript",
-        "bytes": 2879,
-        "pct": 0.010848471831277814,
+        "bytes": 3109,
+        "pct": 0.011469319846091983,
         "color": "#f1e05a"
       },
       {
         "name": "PowerShell",
         "bytes": 2268,
-        "pct": 0.008546138976498118,
+        "pct": 0.008366811647133038,
         "color": "#012456"
       }
     ],
     "firstCommitAt": "2026-11-04T03:05:37Z",
-    "lastCommitAt": "2026-11-04T09:35:14Z"
+    "lastCommitAt": "2026-11-05T12:30:10Z"
   },
   {
     "id": "R_kgDOVi6XCw",
@@ -1547,9 +1547,9 @@
     "nameWithOwner": "Jimmy-xuzimo/Chronos-Agents",
     "description": "Unified self-hosted telemetry for Windows, Linux, macOS and Android. Authenticated agents, a lightweight Hub, and Chronos integration.",
     "url": "https://github.com/Jimmy-xuzimo/Chronos-Agents",
-    "homepageUrl": null,
+    "homepageUrl": "https://jimmy-xuzimo.github.io/Chronos-Agents/",
     "createdAt": "2026-11-04T16:10:27Z",
-    "pushedAt": "2026-11-05T10:16:54Z",
+    "pushedAt": "2026-11-05T12:30:03Z",
     "isFork": false,
     "isArchived": false,
     "primaryLanguage": {
@@ -1559,12 +1559,12 @@
     "topics": [],
     "stars": 0,
     "forks": 0,
-    "diskUsage": 2221,
+    "diskUsage": 2361,
     "defaultBranch": "main",
     "totals": {
-      "commits": 14,
-      "additions": 13019,
-      "deletions": 131,
+      "commits": 18,
+      "additions": 13345,
+      "deletions": 159,
       "releases": 1,
       "issues": 0,
       "pullRequests": 0,
@@ -1575,65 +1575,124 @@
       {
         "name": "Go",
         "bytes": 113365,
-        "pct": 0.41166153443918313,
+        "pct": 0.39122677452306676,
         "color": "#00ADD8"
       },
       {
         "name": "Kotlin",
         "bytes": 48544,
-        "pct": 0.17627748888824332,
+        "pct": 0.16752712514839457,
         "color": "#A97BFF"
       },
       {
         "name": "Python",
-        "bytes": 31810,
-        "pct": 0.11551143131046103,
+        "bytes": 32545,
+        "pct": 0.11231398912233236,
         "color": "#3572A5"
       },
       {
-        "name": "JavaScript",
-        "bytes": 24580,
-        "pct": 0.08925718269761497,
-        "color": "#f1e05a"
-      },
-      {
         "name": "HTML",
-        "bytes": 19662,
-        "pct": 0.07139848357203032,
+        "bytes": 25352,
+        "pct": 0.08749068220093316,
         "color": "#e34c26"
       },
       {
+        "name": "JavaScript",
+        "bytes": 24810,
+        "pct": 0.08562022031418239,
+        "color": "#f1e05a"
+      },
+      {
         "name": "C#",
-        "bytes": 11203,
-        "pct": 0.04068137582430352,
+        "bytes": 18932,
+        "pct": 0.06533502664200326,
         "color": "#7355dd"
       },
       {
         "name": "CSS",
         "bytes": 9454,
-        "pct": 0.03433024431339511,
+        "pct": 0.03262610088070456,
         "color": "#663399"
       },
       {
         "name": "Swift",
         "bytes": 7442,
-        "pct": 0.027024082735380414,
+        "pct": 0.025682615057563293,
         "color": "#F05138"
       },
       {
         "name": "PowerShell",
         "bytes": 5677,
-        "pct": 0.020614850535978852,
+        "pct": 0.01959153529720328,
         "color": "#012456"
       },
       {
         "name": "Shell",
         "bytes": 3647,
-        "pct": 0.013243325683409348,
+        "pct": 0.01258593081361641,
         "color": "#89e051"
       }
     ],
     "firstCommitAt": "2026-11-04T16:10:23Z",
-    "lastCommitAt": "2026-11-05T10:16:44Z"
+    "lastCommitAt": "2026-11-05T12:30:02Z"
+  },
+  {
+    "id": "R_kgDOVj4oUA",
+    "name": "activity",
+    "nameWithOwner": "Jimmy-xuzimo/activity",
+    "description": "A static archive of my GitHub activity, built with Astro.",
+    "url": "https://github.com/Jimmy-xuzimo/activity",
+    "homepageUrl": "https://jimmy-xuzimo.github.io/activity/",
+    "createdAt": "2026-11-05T11:30:41Z",
+    "pushedAt": "2026-11-05T12:52:28Z",
+    "isFork": false,
+    "isArchived": false,
+    "primaryLanguage": {
+      "name": "TypeScript",
+      "color": "#3178c6"
+    },
+    "topics": [],
+    "stars": 0,
+    "forks": 0,
+    "diskUsage": 701,
+    "defaultBranch": "main",
+    "totals": {
+      "commits": 0,
+      "additions": 0,
+      "deletions": 0,
+      "releases": 0,
+      "issues": 0,
+      "pullRequests": 0,
+      "stars": 0,
+      "forks": 0
+    },
+    "languages": [
+      {
+        "name": "TypeScript",
+        "bytes": 64453,
+        "pct": 0.39357966793070387,
+        "color": "#3178c6"
+      },
+      {
+        "name": "Astro",
+        "bytes": 59839,
+        "pct": 0.36540446137969357,
+        "color": "#ff5a03"
+      },
+      {
+        "name": "CSS",
+        "bytes": 39059,
+        "pct": 0.23851222207973816,
+        "color": "#663399"
+      },
+      {
+        "name": "JavaScript",
+        "bytes": 410,
+        "pct": 0.0025036486098643754,
+        "color": "#f1e05a"
+      }
+    ],
+    "firstCommitAt": null,
+    "lastCommitAt": null
   }
 ]
