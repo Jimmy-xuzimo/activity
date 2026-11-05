@@ -1882,3 +1882,9 @@ html[data-theme="light"] .vignette, html[data-theme="light"] .grain { opacity: 0
 body, .topbar, .panel, .heatmap, .repo-card, .modal { transition: background-color .3s ease, color .3s ease, border-color .3s ease; }
 @media (max-width: 720px) { .theme-toggle__text { display:none; } .theme-toggle { min-width:36px; min-height:36px; } .topbar__meta { gap:8px; } }
 @media (prefers-reduced-motion: reduce) { body, .topbar, .panel, .heatmap, .repo-card, .modal { transition:none; } }
+
+.month > summary { cursor: pointer; list-style: none; }
+.month > summary::-webkit-details-marker { display: none; }
+.month > summary:hover .month-head__label { color: var(--accent); }
+.month-toggle::after { content: "展开 +"; margin-left: 1em; color: var(--accent); }
+.month[open] .month-toggle::after { content: "收起 −"; }
