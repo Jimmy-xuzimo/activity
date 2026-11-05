@@ -10,7 +10,7 @@ import {
   fetchIssueCommentsOf,
   fetchProfileAndRepos,
   fetchReleases,
-  fetchStargazers,
+
   fetchUserIssues,
   fetchUserPullRequests,
   searchCommentedIssues,
@@ -143,7 +143,7 @@ async function main(): Promise<void> {
 
     const [releases, stargazers, forks] = await Promise.all([
       fetchReleases(repo),
-      repo.isPrivate ? Promise.resolve([]) : fetchStargazers(repo),
+      Promise.resolve([]),
       repo.isPrivate ? Promise.resolve([]) : fetchForks(repo),
     ]);
 
