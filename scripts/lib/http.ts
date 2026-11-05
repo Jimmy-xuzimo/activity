@@ -97,7 +97,8 @@ async function request(
       } catch {
         /* body was not JSON */
       }
-      throw new GhError(res.status, `${path} -> ${res.status} ${res.statusText}${detail}`);
+      const accepted = res.headers.get('x-accepted-github-permissions');
+      throw new GhError(res.status, `${path} -> ${res.status} ${res.statusText}${detail}${accepted ? ` (accepted permissions: ${accepted})` : ''}`);
     }
     await sleep(RETRY_DELAYS_MS[retries++]);
   }
