@@ -56,7 +56,7 @@ GitHub Pages，Source 设为 **GitHub Actions**。
 | workflow | 触发 | 作用 |
 | --- | --- | --- |
 | `.github/workflows/deploy.yml` | push 到 `main`、手动 | 校验 → 构建 → 部署 `dist` |
-| `.github/workflows/sync.yml` | 每 3 小时（`17 */3 * * *`）、手动 | 抓取 → 校验 → 构建 → 提交 `data/` → 部署 |
+| `.github/workflows/sync.yml` | 每 12 小时（`17 */12 * * *`）、手动 | 抓取 → 校验 → 构建 → 提交 `data/` → 部署 |
 
 同步任务用 `GITHUB_TOKEN` 提交数据，这种提交不会触发新的 workflow，所以它在同一个作业里自行完成部署。
 

@@ -4,7 +4,7 @@
   "sourceUpdatedAt": "2026-11-05T10:18:35.950Z",
   "firstActivityAt": "2025-11-21T13:56:55Z",
   "lastActivityAt": "2026-11-05T10:16:44Z",
-  "syncIntervalMinutes": 180,
+  "syncIntervalMinutes": 720,
   "coverage": {
     "reposTotal": 30,
     "reposPublic": 23,

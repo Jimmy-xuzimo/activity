@@ -2,8 +2,8 @@ name: Sync data
 
 on:
   schedule:
-    # Every 3 hours at :17 (UTC). Cron on GitHub is best-effort and can drift by a few minutes.
-    - cron: '17 */3 * * *'
+    # Every 12 hours at :17 (UTC). Cron on GitHub is best-effort and can drift by a few minutes.
+    - cron: '17 */12 * * *'
   workflow_dispatch:
     inputs:
       mode:

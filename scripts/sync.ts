@@ -244,7 +244,7 @@ async function main(): Promise<void> {
     sourceUpdatedAt: nowIso,
     firstActivityAt,
     lastActivityAt: events.length > 0 ? events[events.length - 1].ts : nowIso,
-    syncIntervalMinutes: 180,
+    syncIntervalMinutes: 720,
     coverage: {
       reposTotal: repos.length,
       reposPublic: reposPublic.length,
@@ -290,7 +290,7 @@ async function main(): Promise<void> {
   }
 
   // Only commit when the actual content changed, so an idle account does not
-  // produce a commit every three hours.
+  // produce a commit every twelve hours.
   const hash = createHash('sha256')
     .update(JSON.stringify({ events, repos: reposPublic, calendar, aggregates }))
     .digest('hex');
