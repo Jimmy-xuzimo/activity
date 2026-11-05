@@ -22,7 +22,7 @@ const cols = Math.ceil(slots / 7);
 const W = LEFT + cols * STEP - GAP;
 const H = TOP + 7 * STEP - GAP;
 
-const LEVEL_FILL = ['#15171b', '#3a2c1c', '#6b4b25', '#a5732f', '#e8a24a'];
+const LEVEL_FILL = ['var(--heat-0)', 'var(--heat-1)', 'var(--heat-2)', 'var(--heat-3)', 'var(--heat-4)'];
 
 type Cell = { date: string; count: number; level: number; x: number; y: number; col: number };
 const cells: Cell[] = days.map((day, index) => {

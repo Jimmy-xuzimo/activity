@@ -2,6 +2,7 @@
    Design tokens
    ───────────────────────────────────────────────────────────── */
 :root {
+  --heat-0: #15171b; --heat-1: #3a2c1c; --heat-2: #6b4b25; --heat-3: #a5732f; --heat-4: #e8a24a;
   --bg: #0b0c0e;
   --bg2: #131518;
   --bg3: #171a1e;
@@ -1869,3 +1870,15 @@ html.js .heatmap.is-in .heat-col {
   border: 0;
 }
 
+
+html[data-theme="light"] { color-scheme: light; --bg:#f7f5f0; --bg2:#efede6; --bg3:#e7e3da; --ink:#242622; --ink-2:#484b43; --muted:#65685d; --rule:#d4d1c8; --rule-soft:#e3e0d7; --accent:#9b5516; --accent-soft:rgba(155,85,22,.13); --accent2:#267681; --warn:#a44426; --heat-0:#e8e5dc; --heat-1:#e9d3af; --heat-2:#d5aa70; --heat-3:#b67937; --heat-4:#82440f; }
+html[data-theme="light"] .topbar { background: rgba(247,245,240,.95); }
+html[data-theme="light"] .heatmap { background: var(--bg2); }
+html[data-theme="light"] .tip { background: var(--bg3); }
+html[data-theme="light"] .repo-card:hover, html[data-theme="light"] .repo-card--private { background: var(--bg2); }
+html[data-theme="light"] .vignette, html[data-theme="light"] .grain { opacity: 0; }
+.theme-toggle { color:var(--ink-2); background:transparent; border:1px solid var(--rule); border-radius:99px; padding:6px 10px; cursor:pointer; font:inherit; font-size:12px; white-space:nowrap; }
+.theme-toggle:hover { color:var(--accent); border-color:var(--accent); }
+body, .topbar, .panel, .heatmap, .repo-card, .modal { transition: background-color .3s ease, color .3s ease, border-color .3s ease; }
+@media (max-width: 720px) { .theme-toggle__text { display:none; } .theme-toggle { min-width:36px; min-height:36px; } .topbar__meta { gap:8px; } }
+@media (prefers-reduced-motion: reduce) { body, .topbar, .panel, .heatmap, .repo-card, .modal { transition:none; } }

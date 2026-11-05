@@ -1,11 +1,8 @@
 ---
 import '../styles/global.css';
 import { meta } from '../lib/data.ts';
-import { daysBetween } from '../lib/format.ts';
 
-const days = daysBetween(meta.firstActivityAt, meta.generatedAt);
-const repoTotal = meta.coverage.reposTotal;
-const title = `一个人，${days} 天，${repoTotal} 个仓库 · Jimmy-xuzimo 的 GitHub 编年史`;
+const title = 'GitHub Chronicle · Jimmy-xuzimo 的活动档案';
 const description =
   '从 2025 年 11 月 21 日到今天，Jimmy-xuzimo 在 GitHub 上留下的每一次提交、每一个版本、每一个 PR。数据每 3 小时自动同步。';
 const base = import.meta.env.BASE_URL;
@@ -38,6 +35,10 @@ const ogImage = new URL('og.png', `https://jimmy-xuzimo.github.io${base}`).href;
 
     <script is:inline>
       document.documentElement.classList.add('js');
+      try {
+        const saved = localStorage.getItem('activity-theme');
+        document.documentElement.dataset.theme = saved === 'light' || saved === 'dark' ? saved : (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+      } catch (_) { document.documentElement.dataset.theme = 'dark'; }
     </script>
   </head>
   <body>
@@ -55,6 +56,7 @@ const ogImage = new URL('og.png', `https://jimmy-xuzimo.github.io${base}`).href;
         </a>
         <div class="topbar__meta">
           <span class="status"><span class="status__dot" aria-hidden="true"></span>3H 自动同步</span>
+          <button class="theme-toggle" type="button" aria-label="切换深浅色模式"><span aria-hidden="true">◐</span> <span class="theme-toggle__text">切换主题</span></button>
           <a class="gh-link" href="https://github.com/Jimmy-xuzimo" target="_blank" rel="noopener"
             >GitHub ↗</a
           >
@@ -75,6 +77,18 @@ const ogImage = new URL('og.png', `https://jimmy-xuzimo.github.io${base}`).href;
     </main>
 
     <script>
+      const themeButton = document.querySelector<HTMLButtonElement>('.theme-toggle');
+      const updateThemeButton = () => {
+        const light = document.documentElement.dataset.theme === 'light';
+        if (themeButton) { themeButton.setAttribute('aria-label', light ? '切换至深色模式' : '切换至浅色模式'); themeButton.title = light ? '切换至深色模式' : '切换至浅色模式'; }
+      };
+      updateThemeButton();
+      themeButton?.addEventListener('click', () => {
+        const next = document.documentElement.dataset.theme === 'light' ? 'dark' : 'light';
+        document.documentElement.dataset.theme = next;
+        try { localStorage.setItem('activity-theme', next); } catch (_) {}
+        updateThemeButton();
+      });
       const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
       // Scroll progress
