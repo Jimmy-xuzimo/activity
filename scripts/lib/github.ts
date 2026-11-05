@@ -491,8 +491,9 @@ type SearchResponse = {
 
 /** Issues (and PRs) the account has commented on, newest activity first. */
 export async function searchCommentedIssues(): Promise<GhCommentedIssue[]> {
-  const q = `commenter:${LOGIN}`;
   const out: GhCommentedIssue[] = [];
+  for (const kind of ['issue', 'pull-request']) {
+    const q = `commenter:${LOGIN} is:${kind}`;
   for (let page = 1; page <= 3; page += 1) {
     const data = await rest<SearchResponse>(
       `/search/issues?q=${encodeURIComponent(q)}&sort=updated&order=desc&per_page=100&page=${page}`,
@@ -509,6 +510,7 @@ export async function searchCommentedIssues(): Promise<GhCommentedIssue[]> {
       });
     }
     if (data.items.length < 100) break;
+  }
   }
   return out;
 }
