@@ -1,5 +1,5 @@
 import { readFileSync } from 'node:fs';
-import { fileURLToPath } from 'node:url';
+import path from 'node:path';
 import type {
   ActivityEvent,
   AggregatesRecord,
@@ -10,7 +10,7 @@ import type {
 } from '../../scripts/lib/types.ts';
 
 function load<T>(name: string): T {
-  const file = fileURLToPath(new URL(`../../data/${name}`, import.meta.url));
+  const file = path.join(process.cwd(), 'data', name);
   return JSON.parse(readFileSync(file, 'utf8')) as T;
 }
 
