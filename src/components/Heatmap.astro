@@ -1,0 +1,240 @@
+---
+import { aggregates, calendar, meta } from '../lib/data.ts';
+import { fmtInt, fmtMonthKey } from '../lib/format.ts';
+
+const days = calendar.days;
+const total = calendar.total;
+const maxPerDay = calendar.maxPerDay;
+const activeDays = days.filter((day) => day.count > 0).length;
+const { streaks, peakDay } = aggregates;
+
+// Geometry — one column per calendar week, Monday first.
+const CELL = 12;
+const GAP = 3;
+const STEP = CELL + GAP;
+const TOP = 22;
+const LEFT = 26;
+
+const first = new Date(`${days[0].date}T00:00:00Z`);
+const firstDow = (first.getUTCDay() + 6) % 7; // 0 = Monday
+const slots = firstDow + days.length;
+const cols = Math.ceil(slots / 7);
+const W = LEFT + cols * STEP - GAP;
+const H = TOP + 7 * STEP - GAP;
+
+const LEVEL_FILL = ['#15171b', '#3a2c1c', '#6b4b25', '#a5732f', '#e8a24a'];
+
+type Cell = { date: string; count: number; level: number; x: number; y: number; col: number };
+const cells: Cell[] = days.map((day, index) => {
+  const slot = firstDow + index;
+  const col = Math.floor(slot / 7);
+  const row = slot % 7;
+  return {
+    date: day.date,
+    count: day.count,
+    level: day.level,
+    col,
+    x: LEFT + col * STEP,
+    y: TOP + row * STEP,
+  };
+});
+
+const columns: Cell[][] = Array.from({ length: cols }, () => []);
+for (const cell of cells) columns[cell.col].push(cell);
+
+const monthLabels: { x: number; text: string; col: number }[] = [];
+let lastMonth = '';
+for (const cell of cells) {
+  const month = cell.date.slice(0, 7);
+  if (month === lastMonth) continue;
+  lastMonth = month;
+  monthLabels.push({ x: cell.x, col: cell.col, text: month.slice(5) });
+}
+
+const weekdayRows = [
+  { row: 0, text: '一' },
+  { row: 2, text: '三' },
+  { row: 4, text: '五' },
+  { row: 6, text: '日' },
+];
+
+const monthRows = aggregates.byMonth.map((entry) => ({
+  ...entry,
+  label: fmtMonthKey(entry.month),
+  active: days.filter((day) => day.date.startsWith(entry.month) && day.count > 0).length,
+}));
+
+const coverageDays = days.length;
+const generated = meta.generatedAt.slice(0, 10).replace(/-/g, '.');
+---
+<section id="heat" class="section shell" data-chapter="heat" aria-labelledby="heat-title">
+  <header class="sec-head reveal">
+    <div class="sec-head__left">
+      <span class="sec-head__index">
+        <span class="label">02 / Heat</span>
+        <span class="sec-head__rule" aria-hidden="true"></span>
+      </span>
+      <h2 id="heat-title" class="section-heading">热力</h2>
+    </div>
+    <p class="sec-head__note note">
+      {coverageDays} 天里，有 {activeDays} 天留下过记录。每一格是一天，颜色深浅对应当天的活动条数。
+    </p>
+  </header>
+
+  <div class="heatmap reveal" data-heatmap>
+    <div class="heatmap__head">
+      <div>
+        <div class="heatmap__big">{fmtInt(total)}<small>contributions · 近 {coverageDays} 天</small></div>
+      </div>
+      <div class="note">
+        单日最多 {fmtInt(maxPerDay)} 次贡献 · {peakDay.date.replace(/-/g, '.')} · 最长连续
+        <span class="mono" style="color:var(--ink)">{streaks.longest}</span> 天
+      </div>
+    </div>
+
+    <div class="heatmap__scroll">
+      <div class="heatmap__canvas">
+        <svg
+          viewBox={`0 0 ${W} ${H}`}
+          role="img"
+          aria-label={`从 ${days[0].date} 到 ${days[days.length - 1].date} 的每日活动热力图，共 ${total} 次贡献，峰值 ${maxPerDay} 次`}
+        >
+          {
+            monthLabels.map((label) => (
+              <text
+                x={label.x}
+                y={11}
+                fill="var(--muted)"
+                font-family="var(--mono)"
+                font-size="9.5"
+                letter-spacing="0.04em"
+              >
+                {label.text}
+              </text>
+            ))
+          }
+
+          {
+            weekdayRows.map((entry) => (
+              <text
+                x="0"
+                y={TOP + entry.row * STEP + CELL - 2}
+                fill="var(--muted)"
+                font-family="var(--mono)"
+                font-size="9.5"
+              >
+                {entry.text}
+              </text>
+            ))
+          }
+
+          {
+            columns.map((column, index) => (
+              <g class="heat-col" style={`--i:${index}`}>
+                {column.map((cell) => (
+                  <rect
+                    class="heat-cell"
+                    x={cell.x}
+                    y={cell.y}
+                    width={CELL}
+                    height={CELL}
+                    fill={LEVEL_FILL[cell.level] ?? LEVEL_FILL[0]}
+                    data-date={cell.date}
+                    data-count={cell.count}
+                  />
+                ))}
+              </g>
+            ))
+          }
+        </svg>
+      </div>
+    </div>
+
+    <div class="heatmap__hint note">左右滑动查看完整一年 →</div>
+
+    <div class="heat-legend">
+      <span>LESS</span>
+      <span class="heat-legend__swatches" aria-hidden="true">
+        {LEVEL_FILL.map((fill) => <i style={`background:${fill}`}></i>)}
+      </span>
+      <span>MORE</span>
+      <span style="margin-left:auto">{days[0].date.slice(0, 7).replace('-', '.')} — {days[days.length - 1].date.slice(0, 7).replace('-', '.')}</span>
+    </div>
+
+    <div class="heatmap__foot">
+      <span class="note">贡献数来自 GitHub 的 contributions collection，包含提交、PR、Issue 与代码评审。快照生成于 {generated}。</span>
+      <button class="table-toggle" type="button" aria-expanded="false" aria-controls="heat-table">
+        月度数据
+      </button>
+    </div>
+
+    <div id="heat-table" hidden>
+      <table class="month-table">
+        <thead>
+          <tr>
+            <th scope="col">月份</th>
+            <th scope="col">活跃天</th>
+            <th scope="col">记录</th>
+            <th scope="col">提交</th>
+            <th scope="col">新增</th>
+            <th scope="col">删除</th>
+          </tr>
+        </thead>
+        <tbody>
+          {
+            monthRows.map((row) => (
+              <tr>
+                <td>{row.label}</td>
+                <td>{row.active}</td>
+                <td>{fmtInt(row.events)}</td>
+                <td>{fmtInt(row.commits)}</td>
+                <td>{fmtInt(row.additions)}</td>
+                <td>{fmtInt(row.deletions)}</td>
+              </tr>
+            ))
+          }
+        </tbody>
+      </table>
+    </div>
+
+    <div class="tip" id="heat-tip" role="status" aria-live="polite"></div>
+  </div>
+</section>
+
+<script>
+  const map = document.querySelector<HTMLElement>('[data-heatmap]');
+  if (map) {
+    const tip = document.getElementById('heat-tip');
+    const cells = map.querySelectorAll<SVGRectElement>('.heat-cell');
+    const show = (cell: SVGRectElement) => {
+      if (!tip) return;
+      const date = cell.dataset.date ?? '';
+      const count = Number(cell.dataset.count ?? '0');
+      tip.textContent = `${date.replace(/-/g, '.')} · ${count === 0 ? '没有记录' : `${count} 条`}`;
+      const box = cell.getBoundingClientRect();
+      tip.style.left = `${box.left + box.width / 2}px`;
+      tip.style.top = `${box.top}px`;
+      tip.classList.add('is-on');
+    };
+    const hide = () => tip?.classList.remove('is-on');
+
+    cells.forEach((cell) => {
+      cell.addEventListener('pointerenter', () => show(cell));
+      cell.addEventListener('pointerleave', hide);
+    });
+    map.addEventListener('pointerdown', () => {
+      // Touch devices have no hover: a tap pins the tooltip briefly.
+      const target = document.querySelector<SVGRectElement>('.heat-cell:focus');
+      if (target) show(target);
+    });
+
+    const toggle = map.querySelector<HTMLButtonElement>('.table-toggle');
+    const table = map.querySelector<HTMLElement>('#heat-table');
+    toggle?.addEventListener('click', () => {
+      if (!table) return;
+      const open = table.hidden;
+      table.hidden = !open;
+      toggle.setAttribute('aria-expanded', String(open));
+    });
+  }
+</script>

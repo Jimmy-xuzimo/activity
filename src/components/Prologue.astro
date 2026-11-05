@@ -1,0 +1,74 @@
+---
+import { meta, aggregates } from '../lib/data.ts';
+import { daysBetween, fmtDateLong, fmtInt } from '../lib/format.ts';
+
+const days = daysBetween(meta.firstActivityAt, meta.generatedAt);
+const repoTotal = meta.coverage.reposTotal;
+const totals = aggregates.totals;
+---
+
+<section class="prologue shell" aria-labelledby="prologue-title" data-start-iso={meta.firstActivityAt}>
+  <div class="prologue__eyebrow reveal">
+    <span class="label">GitHub Chronicle</span>
+    <span class="prologue__eyebrow-line" aria-hidden="true"></span>
+    <span class="label">{fmtDateLong(meta.firstActivityAt)} — {fmtDateLong(meta.generatedAt)}</span>
+  </div>
+
+  <h1 id="prologue-title">
+    <span class="reveal-mask" style="--delay:80ms; display:block"
+      >一个人，<span class="h1-num">{days}</span>天，</span
+    >
+    <span class="reveal-mask" style="--delay:220ms; display:block"
+      ><span class="h1-num h1-num--accent">{repoTotal}</span>个仓库。</span
+    >
+  </h1>
+
+  <p class="prologue__lead reveal" style="--delay:380ms">
+    从 2025 年 11 月 21 日的第一行提交，到今天为止的每一次 push、每一个版本、每一条 PR
+    —— <strong>全部按时间顺序摊开在这里</strong>。没有精选，也不做修饰。
+  </p>
+
+  <div class="prologue__foot reveal" style="--delay:520ms">
+    <div class="prologue__elapsed">
+      <span class="label">Elapsed since first commit</span>
+      <span class="prologue__elapsed-val">
+        <span id="elapsed-total">{days}</span> 天 <span id="elapsed-hours">00</span><small>小时</small>
+        <span id="elapsed-minutes">00</span><small>分</small>
+      </span>
+    </div>
+
+    <div class="prologue__quick" aria-label="核心数据速览">
+      <span class="chip"><b>{fmtInt(totals.commits)}</b><span class="chip__k">commits</span></span>
+      <span class="chip"><b>{fmtInt(totals.prsOpened)}</b><span class="chip__k">pull requests</span></span>
+      <span class="chip"><b>{fmtInt(totals.additions)}</b><span class="chip__k">lines added</span></span>
+    </div>
+
+    <span class="scroll-cue" aria-hidden="true">
+      <span class="scroll-cue__line"></span>
+      Scroll
+    </span>
+  </div>
+</section>
+
+<script>
+  const section = document.querySelector<HTMLElement>('[data-start-iso]');
+  const firstISO = section?.dataset.startIso || '2025-11-21T13:56:55Z';
+  const totalEl = document.getElementById('elapsed-total');
+  const hoursEl = document.getElementById('elapsed-hours');
+  const minutesEl = document.getElementById('elapsed-minutes');
+
+  const update = () => {
+    const elapsed = Date.now() - Date.parse(firstISO);
+    const totalDays = Math.floor(elapsed / 86_400_000);
+    const hours = Math.floor((elapsed % 86_400_000) / 3_600_000);
+    const minutes = Math.floor((elapsed % 3_600_000) / 60_000);
+    if (totalEl) totalEl.textContent = String(totalDays);
+    if (hoursEl) hoursEl.textContent = String(hours).padStart(2, '0');
+    if (minutesEl) minutesEl.textContent = String(minutes).padStart(2, '0');
+  };
+
+  if (totalEl) {
+    update();
+    window.setInterval(update, 30_000);
+  }
+</script>

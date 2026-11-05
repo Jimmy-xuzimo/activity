@@ -1,0 +1,127 @@
+{
+  "version": 1,
+  "repos": {
+    "Essay-Assistant": {
+      "lastPushedAt": "2026-03-01T17:09:02Z",
+      "lastCommitAt": "2026-03-01T17:09:02Z",
+      "lastCommitSha": "3daee1ae2b4a3b652639fb059288d6aabe0d2e2b"
+    },
+    "ciyu-vocab": {
+      "lastPushedAt": "2026-10-22T11:36:31Z",
+      "lastCommitAt": "2026-10-22T11:36:05Z",
+      "lastCommitSha": "d8bbd6a28e1d1c48bb5cd21d8a6edab4df426e8f"
+    },
+    "about-me": {
+      "lastPushedAt": "2026-10-20T08:03:50Z",
+      "lastCommitAt": "2026-10-07T09:40:06Z",
+      "lastCommitSha": "28abdfa842c0915d6888cfd476cac52358e2040a"
+    },
+    "my-2025-photos": {
+      "lastPushedAt": "2026-10-16T11:42:07Z",
+      "lastCommitAt": "2026-10-16T11:41:59Z",
+      "lastCommitSha": "072d20e59ececf99bee67c5d05e4042e59b2f509"
+    },
+    "Chronos-Monitoring": {
+      "lastPushedAt": "2026-11-04T10:57:05Z",
+      "lastCommitAt": "2026-11-04T10:49:08Z",
+      "lastCommitSha": "cc697064a1559731bce29dbef9cbf1439b2bc657"
+    },
+    "Jimmy-xuzimo": {
+      "lastPushedAt": "2026-11-05T09:40:33Z",
+      "lastCommitAt": "2026-11-02T09:04:15Z",
+      "lastCommitSha": "a8262954652cbc0cfd841878ff32ee5b55a3f1e8"
+    },
+    "openclaw": {
+      "lastPushedAt": "2026-10-26T18:05:33Z",
+      "lastCommitAt": "2026-04-17T15:39:01Z",
+      "lastCommitSha": "70294ad1bb0adf4fad479e109de5570d81f696a3"
+    },
+    "dify": {
+      "lastPushedAt": "2026-06-05T22:46:18Z",
+      "lastCommitAt": null,
+      "lastCommitSha": null
+    },
+    "github-readme-stats": {
+      "lastPushedAt": "2026-06-05T15:56:55Z",
+      "lastCommitAt": null,
+      "lastCommitSha": null
+    },
+    "DeepSeek-TUI": {
+      "lastPushedAt": "2026-05-08T07:59:57Z",
+      "lastCommitAt": null,
+      "lastCommitSha": null
+    },
+    "vidown": {
+      "lastPushedAt": "2026-11-01T04:58:03Z",
+      "lastCommitAt": "2026-11-01T04:58:01Z",
+      "lastCommitSha": "e93eb0877a528c6a307f6db780cd8553398bc008"
+    },
+    "DSH-for-Android": {
+      "lastPushedAt": "2026-10-27T17:20:28Z",
+      "lastCommitAt": "2026-10-27T17:20:26Z",
+      "lastCommitSha": "0cda7a5629eb7975a37d7360ad18a1a3a1dce7e4"
+    },
+    "Student-Management-System": {
+      "lastPushedAt": "2026-09-01T05:05:03Z",
+      "lastCommitAt": null,
+      "lastCommitSha": null
+    },
+    "portfolio-2026": {
+      "lastPushedAt": "2026-09-11T14:18:03Z",
+      "lastCommitAt": null,
+      "lastCommitSha": null
+    },
+    "PianoScoreFollower": {
+      "lastPushedAt": "2026-11-01T16:47:10Z",
+      "lastCommitAt": "2026-11-01T16:45:21Z",
+      "lastCommitSha": "4653d0375abad993de80d49b6184f137fe1af168"
+    },
+    "PianoScoreFollower-Web": {
+      "lastPushedAt": "2026-11-02T11:28:12Z",
+      "lastCommitAt": "2026-11-02T11:28:09Z",
+      "lastCommitSha": "dec8c5e20a35254c1946cde73d241309588ed6fd"
+    },
+    "ai-daily-news": {
+      "lastPushedAt": "2026-10-08T07:25:31Z",
+      "lastCommitAt": "2026-10-08T07:19:30Z",
+      "lastCommitSha": "2c6fd2ec30280a2bbc825c7f651e724e2e01d315"
+    },
+    "naiwa-test": {
+      "lastPushedAt": "2026-10-15T04:06:39Z",
+      "lastCommitAt": null,
+      "lastCommitSha": null
+    },
+    "freedrive": {
+      "lastPushedAt": "2026-10-16T20:28:58Z",
+      "lastCommitAt": null,
+      "lastCommitSha": null
+    },
+    "deepseek-local-bridge": {
+      "lastPushedAt": "2026-10-17T11:37:42Z",
+      "lastCommitAt": "2026-10-17T11:37:35Z",
+      "lastCommitSha": "ddfee074885e5bb3e9756b9a5db7fe1707b85c21"
+    },
+    "ics-lite": {
+      "lastPushedAt": "2026-11-05T03:00:26Z",
+      "lastCommitAt": "2026-11-05T03:00:14Z",
+      "lastCommitSha": "e339d870d8d3f026155122c06a3b78e1e67a736a"
+    },
+    "Chronos-Widgets": {
+      "lastPushedAt": "2026-11-04T09:36:03Z",
+      "lastCommitAt": "2026-11-04T09:35:14Z",
+      "lastCommitSha": "84b0f5b467958fa1eb0901437e24ecc040ff4ca4"
+    },
+    "Chronos-Agents": {
+      "lastPushedAt": "2026-11-05T10:16:54Z",
+      "lastCommitAt": "2026-11-05T10:16:44Z",
+      "lastCommitSha": "cc947b948fd353a21e11b00c1b861de9953cd1e6"
+    }
+  },
+  "issuesSince": "2026-11-05T09:18:35.950Z",
+  "commentsSince": "2026-11-05T09:18:35.950Z",
+  "pullsUpdatedAt": "2026-11-05T09:18:35.950Z",
+  "starsMaxStarredAt": "2026-10-28T15:46:44Z",
+  "lastFullSyncAt": "2026-11-05T10:18:35.950Z",
+  "lastSuccessfulSyncAt": "2026-11-05T10:18:35.950Z",
+  "contentHash": "c022342dcf810962bec2897c1f76bb2d98351dfb0457eee96de43be2e7fe4e22"
+}

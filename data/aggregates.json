@@ -1,0 +1,645 @@
+{
+  "totals": {
+    "commits": 291,
+    "repos": 30,
+    "releases": 35,
+    "prsOpened": 96,
+    "prsMerged": 15,
+    "issuesOpened": 7,
+    "issueComments": 82,
+    "starsReceived": 27,
+    "forksReceived": 1,
+    "additions": 309383,
+    "deletions": 60552,
+    "net": 248831
+  },
+  "byMonth": [
+    {
+      "month": "2025-11",
+      "commits": 38,
+      "additions": 15454,
+      "deletions": 510,
+      "events": 41
+    },
+    {
+      "month": "2025-12",
+      "commits": 15,
+      "additions": 3314,
+      "deletions": 140,
+      "events": 18
+    },
+    {
+      "month": "2026-01",
+      "commits": 23,
+      "additions": 1608,
+      "deletions": 347,
+      "events": 26
+    },
+    {
+      "month": "2026-02",
+      "commits": 17,
+      "additions": 1238,
+      "deletions": 407,
+      "events": 71
+    },
+    {
+      "month": "2026-03",
+      "commits": 8,
+      "additions": 845,
+      "deletions": 1424,
+      "events": 145
+    },
+    {
+      "month": "2026-04",
+      "commits": 2,
+      "additions": 4,
+      "deletions": 2,
+      "events": 59
+    },
+    {
+      "month": "2026-05",
+      "commits": 3,
+      "additions": 8,
+      "deletions": 15,
+      "events": 6
+    },
+    {
+      "month": "2026-06",
+      "commits": 1,
+      "additions": 540,
+      "deletions": 285,
+      "events": 2
+    },
+    {
+      "month": "2026-07",
+      "commits": 4,
+      "additions": 750,
+      "deletions": 422,
+      "events": 8
+    },
+    {
+      "month": "2026-08",
+      "commits": 0,
+      "additions": 0,
+      "deletions": 0,
+      "events": 3
+    },
+    {
+      "month": "2026-09",
+      "commits": 3,
+      "additions": 164,
+      "deletions": 15,
+      "events": 10
+    },
+    {
+      "month": "2026-10",
+      "commits": 136,
+      "additions": 215827,
+      "deletions": 37743,
+      "events": 209
+    },
+    {
+      "month": "2026-11",
+      "commits": 41,
+      "additions": 69631,
+      "deletions": 19242,
+      "events": 61
+    }
+  ],
+  "byWeekdayHour": [
+    [
+      1,
+      2,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      6,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      9,
+      3,
+      1
+    ],
+    [
+      3,
+      10,
+      5,
+      2,
+      0,
+      0,
+      0,
+      0,
+      0,
+      4,
+      7,
+      2,
+      6,
+      4,
+      4,
+      1,
+      0,
+      2,
+      3,
+      2,
+      12,
+      5,
+      1,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      2,
+      0,
+      1,
+      12,
+      2,
+      0,
+      0,
+      0,
+      3,
+      0,
+      1
+    ],
+    [
+      9,
+      3,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      3,
+      3,
+      0,
+      3,
+      0,
+      0,
+      5,
+      1,
+      0,
+      0,
+      4,
+      0,
+      2
+    ],
+    [
+      13,
+      3,
+      2,
+      0,
+      0,
+      0,
+      0,
+      0,
+      3,
+      1,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      1,
+      3,
+      5,
+      0,
+      0,
+      1,
+      1
+    ],
+    [
+      3,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      2,
+      0,
+      0,
+      0,
+      0,
+      5,
+      0,
+      1,
+      2,
+      3,
+      4,
+      8
+    ],
+    [
+      3,
+      4,
+      4,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      2,
+      11,
+      2,
+      4,
+      23,
+      2,
+      7,
+      5,
+      6,
+      1,
+      2,
+      0,
+      3
+    ]
+  ],
+  "byLanguage": [
+    {
+      "name": "TypeScript",
+      "bytes": 53611722,
+      "pct": 0.5664828176730116,
+      "color": "#3178c6"
+    },
+    {
+      "name": "Python",
+      "bytes": 19988400,
+      "pct": 0.2112053993112779,
+      "color": "#3572A5"
+    },
+    {
+      "name": "Rust",
+      "bytes": 7355477,
+      "pct": 0.0777209009680575,
+      "color": "#dea584"
+    },
+    {
+      "name": "JavaScript",
+      "bytes": 4068279,
+      "pct": 0.042987057028310745,
+      "color": "#f1e05a"
+    },
+    {
+      "name": "Swift",
+      "bytes": 3268355,
+      "pct": 0.034534741293250674,
+      "color": "#F05138"
+    },
+    {
+      "name": "Kotlin",
+      "bytes": 2058603,
+      "pct": 0.02175201960328964,
+      "color": "#A97BFF"
+    },
+    {
+      "name": "CSS",
+      "bytes": 947774,
+      "pct": 0.010014557749837262,
+      "color": "#663399"
+    },
+    {
+      "name": "HTML",
+      "bytes": 907194,
+      "pct": 0.009585773299653572,
+      "color": "#e34c26"
+    },
+    {
+      "name": "Go",
+      "bytes": 701772,
+      "pct": 0.007415202591776937,
+      "color": "#00ADD8"
+    },
+    {
+      "name": "MDX",
+      "bytes": 680075,
+      "pct": 0.007185943444028403,
+      "color": "#fcb32c"
+    }
+  ],
+  "byRepo": [
+    {
+      "repo": "Jimmy-xuzimo/vidown",
+      "name": "vidown",
+      "commits": 85,
+      "additions": 92249,
+      "deletions": 18587,
+      "stars": 6,
+      "releases": 19,
+      "lastActivityAt": "2026-11-01T04:58:01Z"
+    },
+    {
+      "repo": "Jimmy-xuzimo/Jimmy-xuzimo",
+      "name": "Jimmy-xuzimo",
+      "commits": 43,
+      "additions": 976,
+      "deletions": 2534,
+      "stars": 1,
+      "releases": 0,
+      "lastActivityAt": "2026-11-02T09:04:15Z"
+    },
+    {
+      "repo": "Jimmy-xuzimo/ciyu-vocab",
+      "name": "ciyu-vocab",
+      "commits": 41,
+      "additions": 20705,
+      "deletions": 4931,
+      "stars": 7,
+      "releases": 2,
+      "lastActivityAt": "2026-10-22T11:36:05Z"
+    },
+    {
+      "repo": "Jimmy-xuzimo/Chronos-Monitoring",
+      "name": "Chronos-Monitoring",
+      "commits": 17,
+      "additions": 27210,
+      "deletions": 22534,
+      "stars": 2,
+      "releases": 3,
+      "lastActivityAt": "2026-11-04T10:49:08Z"
+    },
+    {
+      "repo": "Jimmy-xuzimo/Chronos-Agents",
+      "name": "Chronos-Agents",
+      "commits": 14,
+      "additions": 13019,
+      "deletions": 131,
+      "stars": 0,
+      "releases": 1,
+      "lastActivityAt": "2026-11-05T10:16:44Z"
+    },
+    {
+      "repo": "Jimmy-xuzimo/DSH-for-Android",
+      "name": "DSH-for-Android",
+      "commits": 11,
+      "additions": 18370,
+      "deletions": 534,
+      "stars": 2,
+      "releases": 1,
+      "lastActivityAt": "2026-10-27T17:20:26Z"
+    },
+    {
+      "repo": "Jimmy-xuzimo/about-me",
+      "name": "about-me",
+      "commits": 8,
+      "additions": 2820,
+      "deletions": 1563,
+      "stars": 1,
+      "releases": 0,
+      "lastActivityAt": "2026-10-07T09:40:06Z"
+    },
+    {
+      "repo": "Jimmy-xuzimo/my-2025-photos",
+      "name": "my-2025-photos",
+      "commits": 8,
+      "additions": 3718,
+      "deletions": 3094,
+      "stars": 1,
+      "releases": 0,
+      "lastActivityAt": "2026-10-16T11:41:59Z"
+    },
+    {
+      "repo": "Jimmy-xuzimo/deepseek-local-bridge",
+      "name": "deepseek-local-bridge",
+      "commits": 8,
+      "additions": 12077,
+      "deletions": 1219,
+      "stars": 1,
+      "releases": 2,
+      "lastActivityAt": "2026-10-17T11:37:35Z"
+    },
+    {
+      "repo": "Jimmy-xuzimo/Essay-Assistant",
+      "name": "Essay-Assistant",
+      "commits": 7,
+      "additions": 1491,
+      "deletions": 892,
+      "stars": 1,
+      "releases": 0,
+      "lastActivityAt": "2026-03-01T17:09:02Z"
+    },
+    {
+      "repo": "Jimmy-xuzimo/openclaw",
+      "name": "openclaw",
+      "commits": 6,
+      "additions": 44,
+      "deletions": 13,
+      "stars": 1,
+      "releases": 0,
+      "lastActivityAt": "2026-04-17T15:39:01Z"
+    },
+    {
+      "repo": "Jimmy-xuzimo/PianoScoreFollower-Web",
+      "name": "PianoScoreFollower-Web",
+      "commits": 6,
+      "additions": 20334,
+      "deletions": 1429,
+      "stars": 1,
+      "releases": 0,
+      "lastActivityAt": "2026-11-02T11:28:09Z"
+    },
+    {
+      "repo": "Jimmy-xuzimo/Chronos-Widgets",
+      "name": "Chronos-Widgets",
+      "commits": 6,
+      "additions": 7405,
+      "deletions": 115,
+      "stars": 0,
+      "releases": 4,
+      "lastActivityAt": "2026-11-04T09:35:14Z"
+    },
+    {
+      "repo": "Jimmy-xuzimo/PianoScoreFollower",
+      "name": "PianoScoreFollower",
+      "commits": 5,
+      "additions": 24686,
+      "deletions": 2636,
+      "stars": 1,
+      "releases": 1,
+      "lastActivityAt": "2026-11-01T16:45:21Z"
+    },
+    {
+      "repo": "Jimmy-xuzimo/ics-lite",
+      "name": "ics-lite",
+      "commits": 2,
+      "additions": 1837,
+      "deletions": 26,
+      "stars": 0,
+      "releases": 1,
+      "lastActivityAt": "2026-11-05T03:00:14Z"
+    },
+    {
+      "repo": "Jimmy-xuzimo/ai-daily-news",
+      "name": "ai-daily-news",
+      "commits": 1,
+      "additions": 1324,
+      "deletions": 0,
+      "stars": 1,
+      "releases": 0,
+      "lastActivityAt": "2026-10-08T07:19:30Z"
+    },
+    {
+      "repo": "Jimmy-xuzimo/dify",
+      "name": "dify",
+      "commits": 0,
+      "additions": 0,
+      "deletions": 0,
+      "stars": 0,
+      "releases": 0,
+      "lastActivityAt": null
+    },
+    {
+      "repo": "Jimmy-xuzimo/github-readme-stats",
+      "name": "github-readme-stats",
+      "commits": 0,
+      "additions": 0,
+      "deletions": 0,
+      "stars": 0,
+      "releases": 0,
+      "lastActivityAt": null
+    },
+    {
+      "repo": "Jimmy-xuzimo/DeepSeek-TUI",
+      "name": "DeepSeek-TUI",
+      "commits": 0,
+      "additions": 0,
+      "deletions": 0,
+      "stars": 0,
+      "releases": 0,
+      "lastActivityAt": null
+    },
+    {
+      "repo": "Jimmy-xuzimo/Student-Management-System",
+      "name": "Student-Management-System",
+      "commits": 0,
+      "additions": 0,
+      "deletions": 0,
+      "stars": 0,
+      "releases": 0,
+      "lastActivityAt": null
+    },
+    {
+      "repo": "Jimmy-xuzimo/portfolio-2026",
+      "name": "portfolio-2026",
+      "commits": 0,
+      "additions": 0,
+      "deletions": 0,
+      "stars": 1,
+      "releases": 0,
+      "lastActivityAt": null
+    },
+    {
+      "repo": "Jimmy-xuzimo/naiwa-test",
+      "name": "naiwa-test",
+      "commits": 0,
+      "additions": 0,
+      "deletions": 0,
+      "stars": 0,
+      "releases": 0,
+      "lastActivityAt": null
+    },
+    {
+      "repo": "Jimmy-xuzimo/freedrive",
+      "name": "freedrive",
+      "commits": 0,
+      "additions": 0,
+      "deletions": 0,
+      "stars": 0,
+      "releases": 0,
+      "lastActivityAt": null
+    }
+  ],
+  "streaks": {
+    "longest": 13,
+    "longestStart": "2026-10-24",
+    "longestEnd": "2026-11-05",
+    "current": 13
+  },
+  "peakDay": {
+    "date": "2026-10-17",
+    "events": 49,
+    "commits": 40
+  },
+  "busiestMonth": {
+    "month": "2026-10",
+    "commits": 136,
+    "additions": 215827
+  },
+  "eventTypes": [
+    {
+      "type": "commit",
+      "count": 291
+    },
+    {
+      "type": "pr_opened",
+      "count": 96
+    },
+    {
+      "type": "issue_commented",
+      "count": 82
+    },
+    {
+      "type": "pr_closed",
+      "count": 75
+    },
+    {
+      "type": "release",
+      "count": 35
+    },
+    {
+      "type": "repo_created",
+      "count": 30
+    },
+    {
+      "type": "star_received",
+      "count": 27
+    },
+    {
+      "type": "pr_merged",
+      "count": 15
+    },
+    {
+      "type": "issue_opened",
+      "count": 7
+    },
+    {
+      "type": "fork_received",
+      "count": 1
+    }
+  ]
+}

@@ -1,0 +1,209 @@
+---
+import '../styles/global.css';
+import { meta } from '../lib/data.ts';
+import { daysBetween } from '../lib/format.ts';
+
+const days = daysBetween(meta.firstActivityAt, meta.generatedAt);
+const repoTotal = meta.coverage.reposTotal;
+const title = `一个人，${days} 天，${repoTotal} 个仓库 · Jimmy-xuzimo 的 GitHub 编年史`;
+const description =
+  '从 2025 年 11 月 21 日到今天，Jimmy-xuzimo 在 GitHub 上留下的每一次提交、每一个版本、每一个 PR。数据每 3 小时自动同步。';
+const base = import.meta.env.BASE_URL;
+const ogImage = new URL('og.png', `https://jimmy-xuzimo.github.io${base}`).href;
+---
+
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#0b0c0e" />
+    <meta name="author" content="Jimmy-xuzimo" />
+    <link rel="canonical" href={`https://jimmy-xuzimo.github.io${base}`} />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:locale" content="zh_CN" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230b0c0e'/%3E%3Crect x='9' y='9' width='14' height='14' fill='%23e8a24a'/%3E%3C/svg%3E"
+    />
+    <link rel="stylesheet" href={`${base}fonts/fonts.css`} />
+
+    <script is:inline>
+      document.documentElement.classList.add('js');
+    </script>
+  </head>
+  <body>
+    <div class="vignette" aria-hidden="true"></div>
+    <div class="grain" aria-hidden="true"></div>
+    <div class="progress" id="progress" aria-hidden="true"></div>
+
+    <header class="topbar">
+      <div class="topbar__inner wide">
+        <a class="brand" href="#top">
+          <span class="brand__mark" aria-hidden="true"></span>
+          <span>JIMMY-XUZIMO</span>
+          <span class="brand__sep" aria-hidden="true">/</span>
+          <span>GITHUB 编年史</span>
+        </a>
+        <div class="topbar__meta">
+          <span class="status"><span class="status__dot" aria-hidden="true"></span>3H 自动同步</span>
+          <a class="gh-link" href="https://github.com/Jimmy-xuzimo" target="_blank" rel="noopener"
+            >GitHub ↗</a
+          >
+        </div>
+      </div>
+    </header>
+
+    <nav class="chapter-rail" aria-label="章节导航">
+      <a href="#chronicle" data-chapter="chronicle" title="编年史">01</a>
+      <a href="#heat" data-chapter="heat" title="热力">02</a>
+      <a href="#cadence" data-chapter="cadence" title="节奏">03</a>
+      <a href="#atlas" data-chapter="atlas" title="仓库志">04</a>
+      <a href="#colophon" data-chapter="colophon" title="尾声">05</a>
+    </nav>
+
+    <main id="top">
+      <slot />
+    </main>
+
+    <script>
+      const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      // Scroll progress
+      const progress = document.getElementById('progress');
+      let ticking = false;
+      const updateProgress = () => {
+        const doc = document.documentElement;
+        const max = doc.scrollHeight - window.innerHeight;
+        const ratio = max > 0 ? Math.min(1, window.scrollY / max) : 0;
+        if (progress) progress.style.width = `${ratio * 100}%`;
+        ticking = false;
+      };
+      window.addEventListener(
+        'scroll',
+        () => {
+          if (!ticking) {
+            ticking = true;
+            requestAnimationFrame(updateProgress);
+          }
+        },
+        { passive: true },
+      );
+      updateProgress();
+
+      // Reveal on scroll
+      const revealEls = document.querySelectorAll('.reveal');
+      if (reduceMotion || !('IntersectionObserver' in window)) {
+        revealEls.forEach((el) => el.classList.add('is-in'));
+      } else {
+        const io = new IntersectionObserver(
+          (entries) => {
+            for (const entry of entries) {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('is-in');
+                io.unobserve(entry.target);
+              }
+            }
+          },
+          // threshold 0 + a bottom margin keeps tall blocks (e.g. the repo grid) from never qualifying.
+          { threshold: 0, rootMargin: '0px 0px -12% 0px' },
+        );
+        revealEls.forEach((el) => io.observe(el));
+      }
+
+      // Mask reveals are clipped to zero height, so observe their (unclipped) parent instead.
+      const masks = document.querySelectorAll('.reveal-mask');
+      if (reduceMotion || !('IntersectionObserver' in window)) {
+        masks.forEach((el) => el.classList.add('is-in'));
+      } else {
+        const maskObserver = new IntersectionObserver(
+          (entries) => {
+            for (const entry of entries) {
+              if (!entry.isIntersecting) continue;
+              entry.target.querySelectorAll('.reveal-mask').forEach((mask) => mask.classList.add('is-in'));
+              maskObserver.unobserve(entry.target);
+            }
+          },
+          { threshold: 0.15 },
+        );
+        const parents = new Set<Element>();
+        masks.forEach((el) => {
+          if (el.parentElement) parents.add(el.parentElement);
+        });
+        parents.forEach((parent) => maskObserver.observe(parent));
+      }
+
+      // Count-up numbers
+      const counters = document.querySelectorAll('[data-count]');
+      const fmt = new Intl.NumberFormat('en-US');
+      const renderCount = (el: HTMLElement, value: number) => {
+        el.textContent = fmt.format(Math.round(value));
+      };
+      const animateCount = (el: HTMLElement) => {
+        const target = Number(el.dataset.count || '0');
+        if (reduceMotion) {
+          renderCount(el, target);
+          return;
+        }
+        const duration = 1100;
+        const start = performance.now();
+        const tick = (now: number) => {
+          const t = Math.min(1, (now - start) / duration);
+          const eased = t === 1 ? 1 : 1 - Math.pow(2, -10 * t);
+          renderCount(el, target * eased);
+          if (t < 1) requestAnimationFrame(tick);
+        };
+        requestAnimationFrame(tick);
+      };
+      if (counters.length > 0) {
+        if (!('IntersectionObserver' in window)) {
+          counters.forEach((el) => renderCount(el, Number((el as HTMLElement).dataset.count || '0')));
+        } else {
+          const countObserver = new IntersectionObserver(
+            (entries) => {
+              for (const entry of entries) {
+                if (entry.isIntersecting) {
+                  animateCount(entry.target as HTMLElement);
+                  countObserver.unobserve(entry.target);
+                }
+              }
+            },
+            { threshold: 0.4 },
+          );
+          counters.forEach((el) => {
+            renderCount(el, 0);
+            countObserver.observe(el);
+          });
+        }
+      }
+
+      // Chapter rail active state
+      const railLinks = document.querySelectorAll<HTMLAnchorElement>('.chapter-rail a');
+      const chapters = document.querySelectorAll<HTMLElement>('section[data-chapter]');
+      if (railLinks.length > 0 && chapters.length > 0 && 'IntersectionObserver' in window) {
+        const navObserver = new IntersectionObserver(
+          (entries) => {
+            for (const entry of entries) {
+              if (!entry.isIntersecting) continue;
+              const id = entry.target.id;
+              railLinks.forEach((link) => {
+                link.classList.toggle('is-active', link.dataset.chapter === id);
+              });
+            }
+          },
+          { rootMargin: '-45% 0px -45% 0px', threshold: 0 },
+        );
+        chapters.forEach((section) => navObserver.observe(section));
+      }
+    </script>
+    <slot name="scripts" />
+  </body>
+</html>

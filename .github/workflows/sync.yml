@@ -1,0 +1,87 @@
+name: Sync data
+
+on:
+  schedule:
+    # Every 3 hours at :17 (UTC). Cron on GitHub is best-effort and can drift by a few minutes.
+    - cron: '17 */3 * * *'
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: 'Sync mode'
+        type: choice
+        options: [incremental, backfill]
+        default: incremental
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Install
+        run: npm ci
+
+      - name: Check SYNC_TOKEN
+        env:
+          SYNC_TOKEN: ${{ secrets.SYNC_TOKEN }}
+        run: |
+          if [ -z "${SYNC_TOKEN}" ]; then
+            echo "::error title=Missing SYNC_TOKEN::Add a fine-grained read-only PAT as the repository secret SYNC_TOKEN. Required scopes: Contents, Metadata, Issues, Pull requests (all Read-only). See README."
+            exit 1
+          fi
+          echo "SYNC_TOKEN is present."
+
+      - name: Fetch GitHub activity
+        env:
+          SYNC_TOKEN: ${{ secrets.SYNC_TOKEN }}
+        run: node scripts/sync.ts --mode=${{ inputs.mode || 'incremental' }}
+
+      - name: Validate data
+        run: npm run validate
+
+      - name: Build
+        run: npm run build
+
+      - name: Commit data snapshot
+        id: commit
+        run: |
+          if git diff --quiet -- data; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            echo "No data change since the last snapshot."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data
+          git commit -m "chore(data): sync $(date -u +%Y-%m-%dT%H:%MZ)"
+          git push
+          echo "changed=true" >> "$GITHUB_OUTPUT"
+
+      - uses: actions/configure-pages@v5
+        if: steps.commit.outputs.changed == 'true' || github.event_name == 'workflow_dispatch'
+
+      - uses: actions/upload-pages-artifact@v3
+        if: steps.commit.outputs.changed == 'true' || github.event_name == 'workflow_dispatch'
+        with:
+          path: dist
+
+      - id: deployment
+        uses: actions/deploy-pages@v4
+        if: steps.commit.outputs.changed == 'true' || github.event_name == 'workflow_dispatch'

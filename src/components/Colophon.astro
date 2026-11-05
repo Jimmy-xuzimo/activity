@@ -1,0 +1,99 @@
+---
+import { aggregates, meta, profile } from '../lib/data.ts';
+import { fmtDateLong, fmtInt } from '../lib/format.ts';
+
+const generatedAt = meta.generatedAt;
+const ageHours = Math.max(0, (Date.now() - Date.parse(generatedAt)) / 3_600_000);
+const fresh = ageHours < 24;
+const ageText =
+  ageHours < 1
+    ? `${Math.round(ageHours * 60)} 分钟前`
+    : ageHours < 24
+      ? `${Math.round(ageHours)} 小时前`
+      : `${Math.round(ageHours / 24)} 天前`;
+
+const t = aggregates.totals;
+const syncHours = meta.syncIntervalMinutes / 60;
+---
+<section id="colophon" class="section shell" data-chapter="colophon" aria-labelledby="colophon-title">
+  <header class="sec-head reveal">
+    <div class="sec-head__left">
+      <span class="sec-head__index">
+        <span class="label">05 / Colophon</span>
+        <span class="sec-head__rule" aria-hidden="true"></span>
+      </span>
+      <h2 id="colophon-title" class="section-heading">尾声</h2>
+    </div>
+    <p class="sec-head__note note">
+      这是一份自动生成的档案，不是作品集。它记录发生了什么，也记录哪些东西没有被记录。
+    </p>
+  </header>
+
+  <div class="colophon reveal">
+    <div class="colo-block">
+      <h3>数据口径</h3>
+      <ul>
+        <li>提交只统计自有仓库的默认分支，{fmtInt(t.commits)} 次。</li>
+        <li>向第三方仓库提交的 PR 单独记录，其分支提交不重复计入。</li>
+        <li>机器人提交（github-actions[bot]）与数据同步自身的提交已排除。</li>
+        <li>行数口径为新增减删除，净增 {fmtInt(t.net)} 行。</li>
+        <li>时间统一换算为北京时间（UTC+8）。</li>
+      </ul>
+    </div>
+
+    <div class="colo-block">
+      <h3>同步</h3>
+      <div class:list={['sync-state', !fresh && 'sync-state--warn']}>
+        <span class="sync-state__dot" aria-hidden="true"></span>
+        {fresh ? '同步正常' : '快照已过期'} · {ageText}
+      </div>
+      <p>
+        每 {syncHours} 小时自动抓取一次 GitHub 数据并重新构建页面。当前快照生成于
+        {fmtDateLong(generatedAt)}，最近一条活动是
+        {fmtDateLong(meta.lastActivityAt)}。
+      </p>
+      <p>
+        页面是静态快照，不会在浏览器里实时请求 GitHub。若快照超过 24 小时未更新，
+        这里会显示为告警状态。
+      </p>
+    </div>
+
+    <div class="colo-block">
+      <h3>技术</h3>
+      <ul>
+        <li>Astro 静态生成，无客户端框架。</li>
+        <li>GitHub Actions 定时抓取 + GitHub Pages 部署。</li>
+        <li>无统计脚本，无第三方追踪。</li>
+        <li>移动端、平板与桌面共用同一套版式。</li>
+      </ul>
+    </div>
+
+    <div class="colo-block">
+      <h3>链接</h3>
+      <ul>
+        <li>
+          <a href={`https://github.com/${profile.login}`} target="_blank" rel="noopener"
+            >github.com/{profile.login} ↗</a
+          >
+        </li>
+        <li>
+          <a href="https://github.com/Jimmy-xuzimo/activity" target="_blank" rel="noopener"
+            >本站源码 · 同步脚本 ↗</a
+          >
+        </li>
+        <li>
+          <a href="#top">回到开头 ↑</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <span>JIMMY-XUZIMO · GITHUB CHRONICLE</span>
+    <span class="footer__sep" aria-hidden="true">/</span>
+    <span>数据截至 {fmtDateLong(meta.lastActivityAt)}</span>
+    <span class="footer__sep" aria-hidden="true">/</span>
+    <span>{fmtInt(meta.counts.events)} 条记录 · {fmtInt(meta.coverage.reposPublic)} 个公开仓库</span>
+    <span style="margin-left:auto">AUTOMATED · NO TRACKING</span>
+  </footer>
+</section>

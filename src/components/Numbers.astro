@@ -1,0 +1,59 @@
+---
+import { aggregates, meta } from '../lib/data.ts';
+import { fmtInt } from '../lib/format.ts';
+
+const t = aggregates.totals;
+const publicCount = meta.coverage.reposPublic;
+const privateCount = meta.coverage.reposPrivate;
+const activeDays = meta.counts.daysActive;
+---
+
+<section class="section shell" aria-label="核心数据">
+  <div class="strip-head label reveal">The record, in numbers · 全部活动</div>
+
+  <div class="numbers reveal">
+    <article class="figure">
+      <div class="figure__index label">01 / Commits</div>
+      <div class="figure__value" data-count={t.commits}>0</div>
+      <div>
+        <div class="figure__label">次提交</div>
+        <div class="figure__sub">自有仓库默认分支</div>
+      </div>
+    </article>
+
+    <article class="figure">
+      <div class="figure__index label">02 / Repositories</div>
+      <div class="figure__value" data-count={t.repos}>0</div>
+      <div>
+        <div class="figure__label">个仓库</div>
+        <div class="figure__sub">{publicCount} 个公开 · {privateCount} 个私有（匿名计入）</div>
+      </div>
+    </article>
+
+    <article class="figure">
+      <div class="figure__index label">03 / Releases</div>
+      <div class="figure__value" data-count={t.releases}>0</div>
+      <div>
+        <div class="figure__label">个版本发布</div>
+        <div class="figure__sub">正式版与预发布一并计入</div>
+      </div>
+    </article>
+
+    <article class="figure">
+      <div class="figure__index label">04 / Lines</div>
+      <div class="figure__value figure__value--accent" data-count={t.additions}>0</div>
+      <div>
+        <div class="figure__label">行新增</div>
+        <div class="figure__sub">删除 {fmtInt(t.deletions)} · 净增 {fmtInt(t.net)}</div>
+      </div>
+    </article>
+  </div>
+
+  <div class="secondary-strip reveal" style="--delay:120ms">
+    <span class="chip"><b>{fmtInt(t.prsOpened)}</b><span class="chip__k">Pull requests</span></span>
+    <span class="chip"><b>{fmtInt(t.issueComments)}</b><span class="chip__k">Issue comments</span></span>
+    <span class="chip"><b>{fmtInt(t.starsReceived)}</b><span class="chip__k">Stars received</span></span>
+    <span class="chip"><b>{fmtInt(activeDays)}</b><span class="chip__k">Active days</span></span>
+    <span class="chip"><b>{fmtInt(meta.counts.events)}</b><span class="chip__k">Records</span></span>
+  </div>
+</section>

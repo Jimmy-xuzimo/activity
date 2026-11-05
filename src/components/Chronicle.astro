@@ -1,0 +1,222 @@
+---
+import { events, REPO_COLORS } from '../lib/data.ts';
+import {
+  localDateISO,
+  fmtMonthDay,
+  fmtTime,
+  weekdayCN,
+  fmtYearMonth,
+  fmtInt,
+  EVENT_LABELS,
+} from '../lib/format.ts';
+import type { ActivityEvent } from '../../scripts/lib/types.ts';
+
+type Item =
+  | { kind: 'single'; event: ActivityEvent }
+  | { kind: 'commits'; commits: ActivityEvent[]; ts: string };
+
+type DayGroup = { date: string; iso: string; items: Item[]; count: number };
+type MonthGroup = { key: string; year: string; month: string; count: number; days: DayGroup[] };
+
+const dayMap = new Map<string, ActivityEvent[]>();
+for (const event of events) {
+  const key = localDateISO(event.ts);
+  const list = dayMap.get(key) ?? [];
+  list.push(event);
+  dayMap.set(key, list);
+}
+
+const today = localDateISO(new Date().toISOString());
+const months: MonthGroup[] = [];
+
+for (const [date, dayEvents] of dayMap) {
+  const items: Item[] = [];
+  const commits = dayEvents.filter((event) => event.type === 'commit');
+  const collapse = commits.length > 3;
+  let emitted = false;
+
+  for (const event of dayEvents) {
+    if (collapse && event.type === 'commit') {
+      if (!emitted) {
+        items.push({ kind: 'commits', commits, ts: commits[0].ts });
+        emitted = true;
+      }
+      continue;
+    }
+    items.push({ kind: 'single', event });
+  }
+
+  const monthKey = date.slice(0, 7);
+  let group = months.find((entry) => entry.key === monthKey);
+  if (!group) {
+    const { year, month } = fmtYearMonth(`${date}T00:00:00Z`);
+    group = { key: monthKey, year, month, count: 0, days: [] };
+    months.push(group);
+  }
+  group.days.push({ date, iso: dayEvents[0].ts, items, count: dayEvents.length });
+  group.count += dayEvents.length;
+}
+
+months.sort((a, b) => a.key.localeCompare(b.key));
+for (const month of months) month.days.sort((a, b) => a.date.localeCompare(b.date));
+
+const dotColor = (event: ActivityEvent): string | null =>
+  event.repo ? (REPO_COLORS.get(event.repo) ?? null) : null;
+
+const groupStats = (commits: ActivityEvent[]) => {
+  const additions = commits.reduce((sum, event) => sum + (event.meta?.additions ?? 0), 0);
+  const deletions = commits.reduce((sum, event) => sum + (event.meta?.deletions ?? 0), 0);
+  return { additions, deletions };
+};
+---
+
+<section id="chronicle" class="section shell" data-chapter="chronicle" aria-labelledby="chronicle-title">
+  <header class="sec-head reveal">
+    <div class="sec-head__left">
+      <span class="sec-head__index">
+        <span class="label">01 / Chronicle</span>
+        <span class="sec-head__rule" aria-hidden="true"></span>
+      </span>
+      <h2 id="chronicle-title" class="section-heading">编年史</h2>
+    </div>
+    <p class="sec-head__note note">
+      按北京时间顺序排列的 {fmtInt(events.length)} 条记录。共享同一天的多次提交会折叠成一条，展开即可看到每一条。
+    </p>
+  </header>
+
+  <div class="chronicle">
+    {
+      months.map((month) => (
+        <div class="month reveal">
+          <div class="month-head">
+            <span class="month-head__label serif">
+              <b>{month.year}</b>
+              {month.month}
+            </span>
+            <span class="month-head__count">{fmtInt(month.count)} 条</span>
+          </div>
+
+          {month.days.map((day) => (
+            <div class="day" data-date={day.date}>
+              <div class="day__date">
+                <span>{fmtMonthDay(`${day.date}T00:00:00Z`)}</span>
+                <span>{weekdayCN(`${day.date}T00:00:00Z`)}</span>
+                {day.date === today && <span class="event__tag">today</span>}
+              </div>
+
+              <div>
+                {day.items.map((item) =>
+                  item.kind === 'single' ? (
+                    <div class={`event event--w${item.event.weight}`}>
+                      <div class="event__rail" aria-hidden="true">
+                        <span class={`event__marker event__marker--${item.event.weight}`} />
+                      </div>
+                      <div class="event__body">
+                        <div class="event__title">
+                          {item.event.url ? (
+                            <a href={item.event.url} target="_blank" rel="noopener">
+                              {item.event.title}
+                            </a>
+                          ) : (
+                            item.event.title
+                          )}
+                        </div>
+                        <div class="event__meta">
+                          <span>{fmtTime(item.event.ts)}</span>
+                          <span class="event__sep">·</span>
+                          <span class="event__repo">
+                            {dotColor(item.event) && (
+                              <span
+                                class="event__lang"
+                                style={`background:${dotColor(item.event)}`}
+                              />
+                            )}
+                            {item.event.repoName}
+                          </span>
+                          <span class="event__sep">·</span>
+                          <span>{EVENT_LABELS[item.event.type]}</span>
+                          {item.event.type === 'commit' && (
+                            <span>
+                              <span class="event__add">+{fmtInt(item.event.meta?.additions ?? 0)}</span>
+                              <span class="event__sep"> </span>
+                              <span class="event__del">−{fmtInt(item.event.meta?.deletions ?? 0)}</span>
+                            </span>
+                          )}
+                          {item.event.meta?.isMerge && <span class="event__tag">merge</span>}
+                          {item.event.meta?.private && (
+                            <span class="event__tag event__tag--private">private</span>
+                          )}
+                          {item.event.meta?.external && <span class="event__tag">external</span>}
+                        </div>
+                      </div>
+                    </div>
+                  ) : (
+                    <div class="event event--commits">
+                      <div class="event__rail" aria-hidden="true">
+                        <span class="event__marker event__marker--1" />
+                      </div>
+                      <div class="event__body">
+                        <details class="commit-group">
+                          <summary>
+                            <span class="commit-summary__row">
+                              <span class="commit-summary__count">
+                                {item.commits.length} 次提交
+                              </span>
+                              <span class="commit-summary__stats">
+                                <span class="event__add">
+                                  +{fmtInt(groupStats(item.commits).additions)}
+                                </span>
+                                <span class="event__del">
+                                  −{fmtInt(groupStats(item.commits).deletions)}
+                                </span>
+                              </span>
+                              <span class="commit-summary__toggle" aria-hidden="true"></span>
+                            </span>
+                            <p class="commit-summary__preview">
+                              {item.commits
+                                .slice(0, 2)
+                                .map((commit) => commit.title)
+                                .join(' ／ ')}
+                              {item.commits.length > 2 ? ' …' : ''}
+                            </p>
+                          </summary>
+                          <div class="commit-list">
+                            {item.commits.map((commit) => (
+                              <div class="commit-row">
+                                <span class="commit-row__time">{fmtTime(commit.ts)}</span>
+                                <span class="commit-row__msg">
+                                  {commit.url ? (
+                                    <a href={commit.url} target="_blank" rel="noopener">
+                                      {commit.title}
+                                    </a>
+                                  ) : (
+                                    commit.title
+                                  )}
+                                </span>
+                                <span class="commit-row__stat">
+                                  +{fmtInt(commit.meta?.additions ?? 0)} / −
+                                  {fmtInt(commit.meta?.deletions ?? 0)}
+                                </span>
+                              </div>
+                            ))}
+                          </div>
+                        </details>
+                      </div>
+                    </div>
+                  ),
+                )}
+              </div>
+            </div>
+          ))}
+        </div>
+      ))
+    }
+  </div>
+
+  <div class="chronicle__foot">
+    <span class="label">Caliber</span>
+    <span class="note">
+      提交仅覆盖自有仓库的默认分支；向第三方仓库提交的 PR 以 PR 事件单独记录，其分支提交不重复计入。私有仓库只保留事件类型与行数，不展示名称与内容。
+    </span>
+  </div>
+</section>

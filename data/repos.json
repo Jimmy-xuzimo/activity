@@ -1,0 +1,1639 @@
+[
+  {
+    "id": "R_kgDOQaqsmQ",
+    "name": "Essay-Assistant",
+    "nameWithOwner": "Jimmy-xuzimo/Essay-Assistant",
+    "description": null,
+    "url": "https://github.com/Jimmy-xuzimo/Essay-Assistant",
+    "homepageUrl": "https://essay-assistant.vercel.app",
+    "createdAt": "2025-11-22T04:46:27Z",
+    "pushedAt": "2026-03-01T17:09:02Z",
+    "isFork": false,
+    "isArchived": false,
+    "primaryLanguage": {
+      "name": "HTML",
+      "color": "#e34c26"
+    },
+    "topics": [],
+    "stars": 1,
+    "forks": 0,
+    "diskUsage": 38,
+    "defaultBranch": "main",
+    "totals": {
+      "commits": 7,
+      "additions": 1491,
+      "deletions": 892,
+      "releases": 0,
+      "issues": 0,
+      "pullRequests": 0,
+      "stars": 1,
+      "forks": 0
+    },
+    "languages": [
+      {
+        "name": "HTML",
+        "bytes": 29419,
+        "pct": 1,
+        "color": "#e34c26"
+      }
+    ],
+    "firstCommitAt": "2025-11-22T04:46:28Z",
+    "lastCommitAt": "2026-03-01T17:09:02Z"
+  },
+  {
+    "id": "R_kgDOQatTkA",
+    "name": "ciyu-vocab",
+    "nameWithOwner": "Jimmy-xuzimo/ciyu-vocab",
+    "description": "词屿，一款支持网页、Windows 和安卓的英语单词学习软件，涵盖初中、高中、四六级、雅思等词书，支持跨词书共享学习进度、每日测验与间隔复习。",
+    "url": "https://github.com/Jimmy-xuzimo/ciyu-vocab",
+    "homepageUrl": "https://jimmy-xuzimo.github.io/ciyu-vocab/",
+    "createdAt": "2025-11-22T06:46:41Z",
+    "pushedAt": "2026-10-22T11:36:31Z",
+    "isFork": false,
+    "isArchived": false,
+    "primaryLanguage": {
+      "name": "TypeScript",
+      "color": "#3178c6"
+    },
+    "topics": [],
+    "stars": 7,
+    "forks": 1,
+    "diskUsage": 3882,
+    "defaultBranch": "main",
+    "totals": {
+      "commits": 41,
+      "additions": 20705,
+      "deletions": 4931,
+      "releases": 2,
+      "issues": 0,
+      "pullRequests": 1,
+      "stars": 7,
+      "forks": 1
+    },
+    "languages": [
+      {
+        "name": "TypeScript",
+        "bytes": 80448,
+        "pct": 0.4206585339071234,
+        "color": "#3178c6"
+      },
+      {
+        "name": "CSS",
+        "bytes": 75106,
+        "pct": 0.39272548537724256,
+        "color": "#663399"
+      },
+      {
+        "name": "Python",
+        "bytes": 24387,
+        "pct": 0.12751839283006436,
+        "color": "#3572A5"
+      },
+      {
+        "name": "HTML",
+        "bytes": 5804,
+        "pct": 0.03034882322490235,
+        "color": "#e34c26"
+      },
+      {
+        "name": "JavaScript",
+        "bytes": 5371,
+        "pct": 0.028084688067014217,
+        "color": "#f1e05a"
+      },
+      {
+        "name": "Java",
+        "bytes": 127,
+        "pct": 0.0006640765936531011,
+        "color": "#b07219"
+      }
+    ],
+    "firstCommitAt": "2025-11-22T06:47:14Z",
+    "lastCommitAt": "2026-10-22T11:36:05Z"
+  },
+  {
+    "id": "R_kgDOQjiXqw",
+    "name": "about-me",
+    "nameWithOwner": "Jimmy-xuzimo/about-me",
+    "description": null,
+    "url": "https://github.com/Jimmy-xuzimo/about-me",
+    "homepageUrl": "https://jimmy-xuzimo.github.io/about-me/",
+    "createdAt": "2025-12-06T04:40:44Z",
+    "pushedAt": "2026-10-20T08:03:50Z",
+    "isFork": false,
+    "isArchived": false,
+    "primaryLanguage": {
+      "name": "HTML",
+      "color": "#e34c26"
+    },
+    "topics": [],
+    "stars": 1,
+    "forks": 0,
+    "diskUsage": 1333,
+    "defaultBranch": "main",
+    "totals": {
+      "commits": 8,
+      "additions": 2820,
+      "deletions": 1563,
+      "releases": 0,
+      "issues": 0,
+      "pullRequests": 0,
+      "stars": 1,
+      "forks": 0
+    },
+    "languages": [
+      {
+        "name": "HTML",
+        "bytes": 83000,
+        "pct": 1,
+        "color": "#e34c26"
+      }
+    ],
+    "firstCommitAt": "2025-12-06T04:41:35Z",
+    "lastCommitAt": "2026-10-07T09:40:06Z"
+  },
+  {
+    "id": "R_kgDOQwL4uA",
+    "name": "my-2025-photos",
+    "nameWithOwner": "Jimmy-xuzimo/my-2025-photos",
+    "description": null,
+    "url": "https://github.com/Jimmy-xuzimo/my-2025-photos",
+    "homepageUrl": "https://my-2025-photos.vercel.app",
+    "createdAt": "2025-12-28T17:29:28Z",
+    "pushedAt": "2026-10-16T11:42:07Z",
+    "isFork": false,
+    "isArchived": false,
+    "primaryLanguage": {
+      "name": "JavaScript",
+      "color": "#f1e05a"
+    },
+    "topics": [],
+    "stars": 1,
+    "forks": 0,
+    "diskUsage": 214111,
+    "defaultBranch": "main",
+    "totals": {
+      "commits": 8,
+      "additions": 3718,
+      "deletions": 3094,
+      "releases": 0,
+      "issues": 0,
+      "pullRequests": 0,
+      "stars": 1,
+      "forks": 0
+    },
+    "languages": [
+      {
+        "name": "JavaScript",
+        "bytes": 62608,
+        "pct": 0.9052500686803256,
+        "color": "#f1e05a"
+      },
+      {
+        "name": "HTML",
+        "bytes": 4894,
+        "pct": 0.07076242390942872,
+        "color": "#e34c26"
+      },
+      {
+        "name": "Python",
+        "bytes": 1659,
+        "pct": 0.02398750741024566,
+        "color": "#3572A5"
+      }
+    ],
+    "firstCommitAt": "2025-12-28T17:36:30Z",
+    "lastCommitAt": "2026-10-16T11:41:59Z"
+  },
+  {
+    "id": "R_kgDOQ0BkgQ",
+    "name": "Chronos-Monitoring",
+    "nameWithOwner": "Jimmy-xuzimo/Chronos-Monitoring",
+    "description": "Self-hosted workspace: liquid-glass UI, ICS calendars, cloud/NAS/desktop metrics, certificates, GitHub and news. React + Flask + native Android.",
+    "url": "https://github.com/Jimmy-xuzimo/Chronos-Monitoring",
+    "homepageUrl": "https://jimmy-xuzimo.github.io/Chronos-Monitoring/",
+    "createdAt": "2026-01-05T12:27:05Z",
+    "pushedAt": "2026-11-04T10:57:05Z",
+    "isFork": false,
+    "isArchived": false,
+    "primaryLanguage": {
+      "name": "Kotlin",
+      "color": "#A97BFF"
+    },
+    "topics": [
+      "android",
+      "calendar",
+      "dashboard",
+      "monitoring",
+      "nas",
+      "self-hosted"
+    ],
+    "stars": 2,
+    "forks": 0,
+    "diskUsage": 17246,
+    "defaultBranch": "main",
+    "totals": {
+      "commits": 17,
+      "additions": 27210,
+      "deletions": 22534,
+      "releases": 3,
+      "issues": 0,
+      "pullRequests": 0,
+      "stars": 2,
+      "forks": 0
+    },
+    "languages": [
+      {
+        "name": "Kotlin",
+        "bytes": 155144,
+        "pct": 0.32114328533075004,
+        "color": "#A97BFF"
+      },
+      {
+        "name": "Python",
+        "bytes": 112970,
+        "pct": 0.23384440870297807,
+        "color": "#3572A5"
+      },
+      {
+        "name": "TypeScript",
+        "bytes": 86818,
+        "pct": 0.17971057692108658,
+        "color": "#3178c6"
+      },
+      {
+        "name": "Java",
+        "bytes": 47071,
+        "pct": 0.09743551528775675,
+        "color": "#b07219"
+      },
+      {
+        "name": "C#",
+        "bytes": 44091,
+        "pct": 0.09126700738357976,
+        "color": "#7355dd"
+      },
+      {
+        "name": "HTML",
+        "bytes": 16435,
+        "pct": 0.03401994208226471,
+        "color": "#e34c26"
+      },
+      {
+        "name": "CSS",
+        "bytes": 11724,
+        "pct": 0.024268317674017128,
+        "color": "#663399"
+      },
+      {
+        "name": "JavaScript",
+        "bytes": 7068,
+        "pct": 0.01463054156601442,
+        "color": "#f1e05a"
+      },
+      {
+        "name": "PowerShell",
+        "bytes": 1778,
+        "pct": 0.0036804050515525802,
+        "color": "#012456"
+      }
+    ],
+    "firstCommitAt": "2026-01-05T12:27:28Z",
+    "lastCommitAt": "2026-11-04T10:49:08Z"
+  },
+  {
+    "id": "R_kgDOQ0EIjQ",
+    "name": "Jimmy-xuzimo",
+    "nameWithOwner": "Jimmy-xuzimo/Jimmy-xuzimo",
+    "description": "My personal repository",
+    "url": "https://github.com/Jimmy-xuzimo/Jimmy-xuzimo",
+    "homepageUrl": null,
+    "createdAt": "2026-01-05T13:40:13Z",
+    "pushedAt": "2026-11-05T09:40:33Z",
+    "isFork": false,
+    "isArchived": false,
+    "primaryLanguage": {
+      "name": "HTML",
+      "color": "#e34c26"
+    },
+    "topics": [],
+    "stars": 1,
+    "forks": 0,
+    "diskUsage": 701,
+    "defaultBranch": "main",
+    "totals": {
+      "commits": 43,
+      "additions": 976,
+      "deletions": 2534,
+      "releases": 0,
+      "issues": 0,
+      "pullRequests": 0,
+      "stars": 1,
+      "forks": 0
+    },
+    "languages": [
+      {
+        "name": "HTML",
+        "bytes": 11508,
+        "pct": 1,
+        "color": "#e34c26"
+      }
+    ],
+    "firstCommitAt": "2026-01-05T13:40:14Z",
+    "lastCommitAt": "2026-11-02T09:04:15Z"
+  },
+  {
+    "id": "R_kgDORYpkMA",
+    "name": "openclaw",
+    "nameWithOwner": "Jimmy-xuzimo/openclaw",
+    "description": "Your own personal AI assistant. Any OS. Any Platform. The lobster way. 🦞 ",
+    "url": "https://github.com/Jimmy-xuzimo/openclaw",
+    "homepageUrl": "https://openclaw.ai",
+    "createdAt": "2026-02-25T14:05:51Z",
+    "pushedAt": "2026-10-26T18:05:33Z",
+    "isFork": true,
+    "isArchived": false,
+    "primaryLanguage": {
+      "name": "TypeScript",
+      "color": "#3178c6"
+    },
+    "topics": [],
+    "stars": 1,
+    "forks": 0,
+    "diskUsage": 9920083,
+    "defaultBranch": "main",
+    "totals": {
+      "commits": 6,
+      "additions": 44,
+      "deletions": 13,
+      "releases": 0,
+      "issues": 0,
+      "pullRequests": 13,
+      "stars": 1,
+      "forks": 0
+    },
+    "languages": [
+      {
+        "name": "TypeScript",
+        "bytes": 28387684,
+        "pct": 0.854211485835994,
+        "color": "#3178c6"
+      },
+      {
+        "name": "Swift",
+        "bytes": 3260913,
+        "pct": 0.09812386734021376,
+        "color": "#F05138"
+      },
+      {
+        "name": "Kotlin",
+        "bytes": 799818,
+        "pct": 0.02406725825813663,
+        "color": "#A97BFF"
+      },
+      {
+        "name": "Shell",
+        "bytes": 268081,
+        "pct": 0.008066803524176156,
+        "color": "#89e051"
+      },
+      {
+        "name": "JavaScript",
+        "bytes": 227141,
+        "pct": 0.006834881320514683,
+        "color": "#f1e05a"
+      },
+      {
+        "name": "CSS",
+        "bytes": 142798,
+        "pct": 0.0042969229809099,
+        "color": "#663399"
+      },
+      {
+        "name": "Python",
+        "bytes": 62109,
+        "pct": 0.0018689168575283476,
+        "color": "#3572A5"
+      },
+      {
+        "name": "Go",
+        "bytes": 49611,
+        "pct": 0.0014928405580324727,
+        "color": "#00ADD8"
+      },
+      {
+        "name": "HTML",
+        "bytes": 28096,
+        "pct": 0.0008454344463623059,
+        "color": "#e34c26"
+      },
+      {
+        "name": "Dockerfile",
+        "bytes": 6367,
+        "pct": 0.00019158887813171987,
+        "color": "#384d54"
+      }
+    ],
+    "firstCommitAt": "2026-02-26T15:55:01Z",
+    "lastCommitAt": "2026-04-17T15:39:01Z"
+  },
+  {
+    "id": "R_kgDORZmB2A",
+    "name": "dify",
+    "nameWithOwner": "Jimmy-xuzimo/dify",
+    "description": "Production-ready platform for agentic workflow development.",
+    "url": "https://github.com/Jimmy-xuzimo/dify",
+    "homepageUrl": "https://dify.ai",
+    "createdAt": "2026-02-26T15:17:22Z",
+    "pushedAt": "2026-06-05T22:46:18Z",
+    "isFork": true,
+    "isArchived": false,
+    "primaryLanguage": {
+      "name": "TypeScript",
+      "color": "#3178c6"
+    },
+    "topics": [],
+    "stars": 0,
+    "forks": 0,
+    "diskUsage": 305206,
+    "defaultBranch": "main",
+    "totals": {
+      "commits": 0,
+      "additions": 0,
+      "deletions": 0,
+      "releases": 0,
+      "issues": 0,
+      "pullRequests": 0,
+      "stars": 0,
+      "forks": 0
+    },
+    "languages": [
+      {
+        "name": "TypeScript",
+        "bytes": 23760387,
+        "pct": 0.5267855210834933,
+        "color": "#3178c6"
+      },
+      {
+        "name": "Python",
+        "bytes": 18649285,
+        "pct": 0.4134685734100027,
+        "color": "#3572A5"
+      },
+      {
+        "name": "JavaScript",
+        "bytes": 1569436,
+        "pct": 0.03479556797905663,
+        "color": "#f1e05a"
+      },
+      {
+        "name": "MDX",
+        "bytes": 680075,
+        "pct": 0.01507777054518753,
+        "color": "#fcb32c"
+      },
+      {
+        "name": "CSS",
+        "bytes": 186177,
+        "pct": 0.004127683103762642,
+        "color": "#663399"
+      },
+      {
+        "name": "HTML",
+        "bytes": 158437,
+        "pct": 0.003512666590990518,
+        "color": "#e34c26"
+      },
+      {
+        "name": "Shell",
+        "bytes": 66077,
+        "pct": 0.0014649764280621348,
+        "color": "#89e051"
+      },
+      {
+        "name": "SCSS",
+        "bytes": 22266,
+        "pct": 0.0004936538454716694,
+        "color": "#c6538c"
+      },
+      {
+        "name": "Dockerfile",
+        "bytes": 6234,
+        "pct": 0.00013821243477366328,
+        "color": "#384d54"
+      },
+      {
+        "name": "PHP",
+        "bytes": 6106,
+        "pct": 0.0001353745791992281,
+        "color": "#4F5D95"
+      }
+    ],
+    "firstCommitAt": null,
+    "lastCommitAt": null
+  },
+  {
+    "id": "R_kgDORaeJaA",
+    "name": "github-readme-stats",
+    "nameWithOwner": "Jimmy-xuzimo/github-readme-stats",
+    "description": ":zap: Dynamically generated stats for your github readmes",
+    "url": "https://github.com/Jimmy-xuzimo/github-readme-stats",
+    "homepageUrl": "https://github-readme-stats.vercel.app",
+    "createdAt": "2026-02-27T15:34:11Z",
+    "pushedAt": "2026-06-05T15:56:55Z",
+    "isFork": true,
+    "isArchived": false,
+    "primaryLanguage": {
+      "name": "JavaScript",
+      "color": "#f1e05a"
+    },
+    "topics": [],
+    "stars": 0,
+    "forks": 0,
+    "diskUsage": 7082,
+    "defaultBranch": "master",
+    "totals": {
+      "commits": 0,
+      "additions": 0,
+      "deletions": 0,
+      "releases": 0,
+      "issues": 0,
+      "pullRequests": 0,
+      "stars": 0,
+      "forks": 0
+    },
+    "languages": [
+      {
+        "name": "JavaScript",
+        "bytes": 429394,
+        "pct": 0.9986673395865264,
+        "color": "#f1e05a"
+      },
+      {
+        "name": "Shell",
+        "bytes": 573,
+        "pct": 0.0013326604134735922,
+        "color": "#89e051"
+      }
+    ],
+    "firstCommitAt": null,
+    "lastCommitAt": null
+  },
+  {
+    "id": "R_kgDOSXu_-w",
+    "name": "DeepSeek-TUI",
+    "nameWithOwner": "Jimmy-xuzimo/DeepSeek-TUI",
+    "description": "Coding agent for DeepSeek models that runs in your terminal",
+    "url": "https://github.com/Jimmy-xuzimo/DeepSeek-TUI",
+    "homepageUrl": "https://deepseek-tui.com/",
+    "createdAt": "2026-05-08T10:33:40Z",
+    "pushedAt": "2026-05-08T07:59:57Z",
+    "isFork": true,
+    "isArchived": false,
+    "primaryLanguage": {
+      "name": "Rust",
+      "color": "#dea584"
+    },
+    "topics": [],
+    "stars": 0,
+    "forks": 0,
+    "diskUsage": 33260,
+    "defaultBranch": "main",
+    "totals": {
+      "commits": 0,
+      "additions": 0,
+      "deletions": 0,
+      "releases": 0,
+      "issues": 0,
+      "pullRequests": 0,
+      "stars": 0,
+      "forks": 0
+    },
+    "languages": [
+      {
+        "name": "Rust",
+        "bytes": 6764811,
+        "pct": 0.9482242480539834,
+        "color": "#dea584"
+      },
+      {
+        "name": "TypeScript",
+        "bytes": 236791,
+        "pct": 0.03319101862874673,
+        "color": "#3178c6"
+      },
+      {
+        "name": "JavaScript",
+        "bytes": 72329,
+        "pct": 0.010138363309410502,
+        "color": "#f1e05a"
+      },
+      {
+        "name": "HTML",
+        "bytes": 35809,
+        "pct": 0.005019351183435146,
+        "color": "#e34c26"
+      },
+      {
+        "name": "Shell",
+        "bytes": 10869,
+        "pct": 0.0015235088389163787,
+        "color": "#89e051"
+      },
+      {
+        "name": "CSS",
+        "bytes": 9689,
+        "pct": 0.0013581081185261561,
+        "color": "#663399"
+      },
+      {
+        "name": "Dockerfile",
+        "bytes": 3891,
+        "pct": 0.0005454018669816569,
+        "color": "#384d54"
+      }
+    ],
+    "firstCommitAt": null,
+    "lastCommitAt": null
+  },
+  {
+    "id": "R_kgDOTKrp9w",
+    "name": "vidown",
+    "nameWithOwner": "Jimmy-xuzimo/vidown",
+    "description": "跨平台本地视频下载器，支持内置浏览器登录与媒体探测、音视频分轨选择及原画质保存。",
+    "url": "https://github.com/Jimmy-xuzimo/vidown",
+    "homepageUrl": "https://jimmy-xuzimo.github.io/vidown/",
+    "createdAt": "2026-07-01T15:53:58Z",
+    "pushedAt": "2026-11-01T04:58:03Z",
+    "isFork": false,
+    "isArchived": false,
+    "primaryLanguage": {
+      "name": "TypeScript",
+      "color": "#3178c6"
+    },
+    "topics": [],
+    "stars": 6,
+    "forks": 0,
+    "diskUsage": 10578,
+    "defaultBranch": "main",
+    "totals": {
+      "commits": 85,
+      "additions": 92249,
+      "deletions": 18587,
+      "releases": 19,
+      "issues": 0,
+      "pullRequests": 1,
+      "stars": 6,
+      "forks": 0
+    },
+    "languages": [
+      {
+        "name": "TypeScript",
+        "bytes": 482021,
+        "pct": 0.40266465510183963,
+        "color": "#3178c6"
+      },
+      {
+        "name": "Kotlin",
+        "bytes": 346392,
+        "pct": 0.2893646028078371,
+        "color": "#A97BFF"
+      },
+      {
+        "name": "JavaScript",
+        "bytes": 118481,
+        "pct": 0.0989751712085595,
+        "color": "#f1e05a"
+      },
+      {
+        "name": "Python",
+        "bytes": 80174,
+        "pct": 0.06697475018336316,
+        "color": "#3572A5"
+      },
+      {
+        "name": "CSS",
+        "bytes": 64588,
+        "pct": 0.05395471305963354,
+        "color": "#663399"
+      },
+      {
+        "name": "HTML",
+        "bytes": 61925,
+        "pct": 0.05173012953207728,
+        "color": "#e34c26"
+      },
+      {
+        "name": "C#",
+        "bytes": 19353,
+        "pct": 0.016166866319487952,
+        "color": "#7355dd"
+      },
+      {
+        "name": "C++",
+        "bytes": 17101,
+        "pct": 0.01428561881514822,
+        "color": "#f34b7d"
+      },
+      {
+        "name": "Shell",
+        "bytes": 5771,
+        "pct": 0.0048209055717338386,
+        "color": "#89e051"
+      },
+      {
+        "name": "CMake",
+        "bytes": 1272,
+        "pct": 0.0010625874003197787,
+        "color": "#DA3434"
+      }
+    ],
+    "firstCommitAt": "2026-07-01T16:15:38Z",
+    "lastCommitAt": "2026-11-01T04:58:01Z"
+  },
+  {
+    "id": "R_kgDOT6Q-yA",
+    "name": "DSH-for-Android",
+    "nameWithOwner": "Jimmy-xuzimo/DSH-for-Android",
+    "description": "DeepSeek Harness on Android · native Material 3 navigation and settings · on-device Bionic runtime, Git, Bash and PTY",
+    "url": "https://github.com/Jimmy-xuzimo/DSH-for-Android",
+    "homepageUrl": "https://jimmy-xuzimo.github.io/DSH-for-Android/",
+    "createdAt": "2026-08-16T17:00:25Z",
+    "pushedAt": "2026-10-27T17:20:28Z",
+    "isFork": false,
+    "isArchived": false,
+    "primaryLanguage": {
+      "name": "Kotlin",
+      "color": "#A97BFF"
+    },
+    "topics": [],
+    "stars": 2,
+    "forks": 0,
+    "diskUsage": 12872,
+    "defaultBranch": "main",
+    "totals": {
+      "commits": 11,
+      "additions": 18370,
+      "deletions": 534,
+      "releases": 1,
+      "issues": 0,
+      "pullRequests": 0,
+      "stars": 2,
+      "forks": 0
+    },
+    "languages": [
+      {
+        "name": "Kotlin",
+        "bytes": 188714,
+        "pct": 0.48922844002924265,
+        "color": "#A97BFF"
+      },
+      {
+        "name": "JavaScript",
+        "bytes": 74209,
+        "pct": 0.1923818757809705,
+        "color": "#f1e05a"
+      },
+      {
+        "name": "C",
+        "bytes": 53639,
+        "pct": 0.13905552473440522,
+        "color": "#555555"
+      },
+      {
+        "name": "HTML",
+        "bytes": 24272,
+        "pct": 0.06292353877502346,
+        "color": "#e34c26"
+      },
+      {
+        "name": "Python",
+        "bytes": 17191,
+        "pct": 0.04456651924363169,
+        "color": "#3572A5"
+      },
+      {
+        "name": "Shell",
+        "bytes": 11346,
+        "pct": 0.029413747154804555,
+        "color": "#89e051"
+      },
+      {
+        "name": "Java",
+        "bytes": 7958,
+        "pct": 0.020630583453017333,
+        "color": "#b07219"
+      },
+      {
+        "name": "TypeScript",
+        "bytes": 5315,
+        "pct": 0.013778782489669154,
+        "color": "#3178c6"
+      },
+      {
+        "name": "CSS",
+        "bytes": 3094,
+        "pct": 0.00802098833923544,
+        "color": "#663399"
+      }
+    ],
+    "firstCommitAt": "2026-10-26T01:00:33Z",
+    "lastCommitAt": "2026-10-27T17:20:26Z"
+  },
+  {
+    "id": "R_kgDOUKH0JA",
+    "name": "Student-Management-System",
+    "nameWithOwner": "Jimmy-xuzimo/Student-Management-System",
+    "description": "Secure local student information management system with controlled online updates",
+    "url": "https://github.com/Jimmy-xuzimo/Student-Management-System",
+    "homepageUrl": null,
+    "createdAt": "2026-08-31T19:34:08Z",
+    "pushedAt": "2026-09-01T05:05:03Z",
+    "isFork": true,
+    "isArchived": false,
+    "primaryLanguage": {
+      "name": "Python",
+      "color": "#3572A5"
+    },
+    "topics": [],
+    "stars": 0,
+    "forks": 0,
+    "diskUsage": 519,
+    "defaultBranch": "main",
+    "totals": {
+      "commits": 0,
+      "additions": 0,
+      "deletions": 0,
+      "releases": 0,
+      "issues": 0,
+      "pullRequests": 0,
+      "stars": 0,
+      "forks": 0
+    },
+    "languages": [
+      {
+        "name": "Python",
+        "bytes": 657343,
+        "pct": 0.662905439543207,
+        "color": "#3572A5"
+      },
+      {
+        "name": "JavaScript",
+        "bytes": 181064,
+        "pct": 0.18259616441561138,
+        "color": "#f1e05a"
+      },
+      {
+        "name": "CSS",
+        "bytes": 72279,
+        "pct": 0.07289062523635828,
+        "color": "#663399"
+      },
+      {
+        "name": "HTML",
+        "bytes": 56603,
+        "pct": 0.05708197485097453,
+        "color": "#e34c26"
+      },
+      {
+        "name": "PowerShell",
+        "bytes": 16504,
+        "pct": 0.016643656925259855,
+        "color": "#012456"
+      },
+      {
+        "name": "Batchfile",
+        "bytes": 7564,
+        "pct": 0.007628006603409207,
+        "color": "#C1F12E"
+      },
+      {
+        "name": "Dockerfile",
+        "bytes": 252,
+        "pct": 0.0002541324251796827,
+        "color": "#384d54"
+      }
+    ],
+    "firstCommitAt": null,
+    "lastCommitAt": null
+  },
+  {
+    "id": "R_kgDOUW9OxQ",
+    "name": "portfolio-2026",
+    "nameWithOwner": "Jimmy-xuzimo/portfolio-2026",
+    "description": "画册式个人影像作品集 · LENS Flipbook Portfolio",
+    "url": "https://github.com/Jimmy-xuzimo/portfolio-2026",
+    "homepageUrl": "https://portfolio-2026-five-blond-35.vercel.app",
+    "createdAt": "2026-09-11T14:10:01Z",
+    "pushedAt": "2026-09-11T14:18:03Z",
+    "isFork": false,
+    "isArchived": false,
+    "primaryLanguage": {
+      "name": "JavaScript",
+      "color": "#f1e05a"
+    },
+    "topics": [],
+    "stars": 1,
+    "forks": 0,
+    "diskUsage": 582353,
+    "defaultBranch": "main",
+    "totals": {
+      "commits": 0,
+      "additions": 0,
+      "deletions": 0,
+      "releases": 0,
+      "issues": 0,
+      "pullRequests": 0,
+      "stars": 1,
+      "forks": 0
+    },
+    "languages": [
+      {
+        "name": "JavaScript",
+        "bytes": 99224,
+        "pct": 0.7396055397367284,
+        "color": "#f1e05a"
+      },
+      {
+        "name": "CSS",
+        "bytes": 22852,
+        "pct": 0.17033646893960852,
+        "color": "#663399"
+      },
+      {
+        "name": "PowerShell",
+        "bytes": 10896,
+        "pct": 0.08121766871897315,
+        "color": "#012456"
+      },
+      {
+        "name": "HTML",
+        "bytes": 1186,
+        "pct": 0.008840322604689992,
+        "color": "#e34c26"
+      }
+    ],
+    "firstCommitAt": null,
+    "lastCommitAt": null
+  },
+  {
+    "id": "R_kgDOU-MkBw",
+    "name": "PianoScoreFollower",
+    "nameWithOwner": "Jimmy-xuzimo/PianoScoreFollower",
+    "description": "智能琴谱：Android 钢琴跟谱与自动翻页，深色演奏、五线谱/双行简谱、音高节奏评分和 USB MIDI 录制。Compose Material 3 + alphaTab + Magenta + Parangonar。",
+    "url": "https://github.com/Jimmy-xuzimo/PianoScoreFollower",
+    "homepageUrl": "https://jimmy-xuzimo.github.io/PianoScoreFollower/",
+    "createdAt": "2026-10-06T13:55:55Z",
+    "pushedAt": "2026-11-01T16:47:10Z",
+    "isFork": false,
+    "isArchived": false,
+    "primaryLanguage": {
+      "name": "Kotlin",
+      "color": "#A97BFF"
+    },
+    "topics": [],
+    "stars": 1,
+    "forks": 0,
+    "diskUsage": 88729,
+    "defaultBranch": "main",
+    "totals": {
+      "commits": 5,
+      "additions": 24686,
+      "deletions": 2636,
+      "releases": 1,
+      "issues": 0,
+      "pullRequests": 0,
+      "stars": 1,
+      "forks": 0
+    },
+    "languages": [
+      {
+        "name": "Kotlin",
+        "bytes": 492664,
+        "pct": 0.6624258632535863,
+        "color": "#A97BFF"
+      },
+      {
+        "name": "JavaScript",
+        "bytes": 104665,
+        "pct": 0.14073040241916726,
+        "color": "#f1e05a"
+      },
+      {
+        "name": "Python",
+        "bytes": 61731,
+        "pct": 0.08300223065721696,
+        "color": "#3572A5"
+      },
+      {
+        "name": "HTML",
+        "bytes": 44033,
+        "pct": 0.059205864517490964,
+        "color": "#e34c26"
+      },
+      {
+        "name": "CSS",
+        "bytes": 38464,
+        "pct": 0.051717901864528244,
+        "color": "#663399"
+      },
+      {
+        "name": "PowerShell",
+        "bytes": 1685,
+        "pct": 0.002265616281242983,
+        "color": "#012456"
+      },
+      {
+        "name": "Java",
+        "bytes": 485,
+        "pct": 0.0006521210067672681,
+        "color": "#b07219"
+      }
+    ],
+    "firstCommitAt": "2026-10-06T13:51:19Z",
+    "lastCommitAt": "2026-11-01T16:45:21Z"
+  },
+  {
+    "id": "R_kgDOU_Hr6Q",
+    "name": "PianoScoreFollower-Web",
+    "nameWithOwner": "Jimmy-xuzimo/PianoScoreFollower-Web",
+    "description": "智能琴谱网页版：复用 Android 钢琴模型与在线对齐，支持麦克风 / Web MIDI 跟谱、五线谱 / 双行简谱、自动翻页与 MIDI 录制。",
+    "url": "https://github.com/Jimmy-xuzimo/PianoScoreFollower-Web",
+    "homepageUrl": "https://jimmy-xuzimo.github.io/PianoScoreFollower-Web/",
+    "createdAt": "2026-10-07T06:40:59Z",
+    "pushedAt": "2026-11-02T11:28:12Z",
+    "isFork": false,
+    "isArchived": false,
+    "primaryLanguage": {
+      "name": "JavaScript",
+      "color": "#f1e05a"
+    },
+    "topics": [],
+    "stars": 1,
+    "forks": 0,
+    "diskUsage": 90362,
+    "defaultBranch": "main",
+    "totals": {
+      "commits": 6,
+      "additions": 20334,
+      "deletions": 1429,
+      "releases": 0,
+      "issues": 0,
+      "pullRequests": 0,
+      "stars": 1,
+      "forks": 0
+    },
+    "languages": [
+      {
+        "name": "JavaScript",
+        "bytes": 381861,
+        "pct": 0.8107176826264925,
+        "color": "#f1e05a"
+      },
+      {
+        "name": "CSS",
+        "bytes": 55035,
+        "pct": 0.11684316456341186,
+        "color": "#663399"
+      },
+      {
+        "name": "HTML",
+        "bytes": 29303,
+        "pct": 0.06221232399748629,
+        "color": "#e34c26"
+      },
+      {
+        "name": "Python",
+        "bytes": 4817,
+        "pct": 0.010226828812609338,
+        "color": "#3572A5"
+      }
+    ],
+    "firstCommitAt": "2026-10-07T06:40:46Z",
+    "lastCommitAt": "2026-11-02T11:28:09Z"
+  },
+  {
+    "id": "R_kgDOVAmJlQ",
+    "name": "ai-daily-news",
+    "nameWithOwner": "Jimmy-xuzimo/ai-daily-news",
+    "description": "每日科技与 AI 情报看板：定时抓取 + 静态前端展示（零依赖单文件），支持分类、历史回看、深浅色模式",
+    "url": "https://github.com/Jimmy-xuzimo/ai-daily-news",
+    "homepageUrl": null,
+    "createdAt": "2026-10-08T07:25:25Z",
+    "pushedAt": "2026-10-08T07:25:31Z",
+    "isFork": false,
+    "isArchived": false,
+    "primaryLanguage": {
+      "name": "HTML",
+      "color": "#e34c26"
+    },
+    "topics": [],
+    "stars": 1,
+    "forks": 0,
+    "diskUsage": 16,
+    "defaultBranch": "main",
+    "totals": {
+      "commits": 1,
+      "additions": 1324,
+      "deletions": 0,
+      "releases": 0,
+      "issues": 0,
+      "pullRequests": 0,
+      "stars": 1,
+      "forks": 0
+    },
+    "languages": [
+      {
+        "name": "HTML",
+        "bytes": 21749,
+        "pct": 0.6835224237091047,
+        "color": "#e34c26"
+      },
+      {
+        "name": "PHP",
+        "bytes": 7744,
+        "pct": 0.2433765988874572,
+        "color": "#4F5D95"
+      },
+      {
+        "name": "Python",
+        "bytes": 2326,
+        "pct": 0.0731009774034382,
+        "color": "#3572A5"
+      }
+    ],
+    "firstCommitAt": "2026-10-08T07:19:30Z",
+    "lastCommitAt": "2026-10-08T07:19:30Z"
+  },
+  {
+    "id": "R_kgDOVKW2dw",
+    "name": "naiwa-test",
+    "nameWithOwner": "Jimmy-xuzimo/naiwa-test",
+    "description": null,
+    "url": "https://github.com/Jimmy-xuzimo/naiwa-test",
+    "homepageUrl": null,
+    "createdAt": "2026-10-15T04:02:05Z",
+    "pushedAt": "2026-10-15T04:06:39Z",
+    "isFork": true,
+    "isArchived": false,
+    "primaryLanguage": {
+      "name": "HTML",
+      "color": "#e34c26"
+    },
+    "topics": [],
+    "stars": 0,
+    "forks": 0,
+    "diskUsage": 4819,
+    "defaultBranch": "main",
+    "totals": {
+      "commits": 0,
+      "additions": 0,
+      "deletions": 0,
+      "releases": 0,
+      "issues": 0,
+      "pullRequests": 0,
+      "stars": 0,
+      "forks": 0
+    },
+    "languages": [
+      {
+        "name": "HTML",
+        "bytes": 181916,
+        "pct": 0.6877861585285167,
+        "color": "#e34c26"
+      },
+      {
+        "name": "Python",
+        "bytes": 78820,
+        "pct": 0.2980018525870054,
+        "color": "#3572A5"
+      },
+      {
+        "name": "Shell",
+        "bytes": 3759,
+        "pct": 0.014211988884477967,
+        "color": "#89e051"
+      }
+    ],
+    "firstCommitAt": null,
+    "lastCommitAt": null
+  },
+  {
+    "id": "R_kgDOVLz9Gg",
+    "name": "freedrive",
+    "nameWithOwner": "Jimmy-xuzimo/freedrive",
+    "description": "FreeDrive is a self-hosted cloud drive you run as a single binary, delivering a full Google Drive–style experience with built-in admin controls, sharing, and privacy on your own server.",
+    "url": "https://github.com/Jimmy-xuzimo/freedrive",
+    "homepageUrl": "https://abdullaabdullazade.github.io/freedrive/",
+    "createdAt": "2026-10-16T05:05:47Z",
+    "pushedAt": "2026-10-16T20:28:58Z",
+    "isFork": true,
+    "isArchived": false,
+    "primaryLanguage": {
+      "name": "JavaScript",
+      "color": "#f1e05a"
+    },
+    "topics": [],
+    "stars": 0,
+    "forks": 0,
+    "diskUsage": 75105,
+    "defaultBranch": "master",
+    "totals": {
+      "commits": 0,
+      "additions": 0,
+      "deletions": 0,
+      "releases": 0,
+      "issues": 0,
+      "pullRequests": 0,
+      "stars": 0,
+      "forks": 0
+    },
+    "languages": [
+      {
+        "name": "JavaScript",
+        "bytes": 697429,
+        "pct": 0.25220927074627914,
+        "color": "#f1e05a"
+      },
+      {
+        "name": "Rust",
+        "bytes": 590666,
+        "pct": 0.2136008699303036,
+        "color": "#dea584"
+      },
+      {
+        "name": "TypeScript",
+        "bytes": 572258,
+        "pct": 0.20694403711162598,
+        "color": "#3178c6"
+      },
+      {
+        "name": "Go",
+        "bytes": 538796,
+        "pct": 0.19484326897936882,
+        "color": "#00ADD8"
+      },
+      {
+        "name": "CSS",
+        "bytes": 242838,
+        "pct": 0.08781681703726821,
+        "color": "#663399"
+      },
+      {
+        "name": "HTML",
+        "bytes": 55047,
+        "pct": 0.019906490448160927,
+        "color": "#e34c26"
+      },
+      {
+        "name": "NSIS",
+        "bytes": 31297,
+        "pct": 0.011317845324106537,
+        "color": null
+      },
+      {
+        "name": "Kotlin",
+        "bytes": 27327,
+        "pct": 0.00988218548652776,
+        "color": "#A97BFF"
+      },
+      {
+        "name": "Shell",
+        "bytes": 5314,
+        "pct": 0.0019216867448094749,
+        "color": "#89e051"
+      },
+      {
+        "name": "PowerShell",
+        "bytes": 4307,
+        "pct": 0.0015575281915495688,
+        "color": "#012456"
+      }
+    ],
+    "firstCommitAt": null,
+    "lastCommitAt": null
+  },
+  {
+    "id": "R_kgDOVMU3yQ",
+    "name": "deepseek-local-bridge",
+    "nameWithOwner": "Jimmy-xuzimo/deepseek-local-bridge",
+    "description": "把 DeepSeek 网页版桥接成本地 OpenAI 兼容 API：一次登录，Chatbox / Codex CLI 等客户端即可使用（Windows / macOS / Linux，支持流式、深度思考、联网搜索、附件与工具调用）",
+    "url": "https://github.com/Jimmy-xuzimo/deepseek-local-bridge",
+    "homepageUrl": "https://jimmy-xuzimo.github.io/deepseek-local-bridge/",
+    "createdAt": "2026-10-16T13:37:11Z",
+    "pushedAt": "2026-10-17T11:37:42Z",
+    "isFork": false,
+    "isArchived": false,
+    "primaryLanguage": {
+      "name": "Python",
+      "color": "#3572A5"
+    },
+    "topics": [
+      "chatbox",
+      "codex",
+      "deepseek",
+      "fastapi",
+      "local-api",
+      "openai-api",
+      "playwright"
+    ],
+    "stars": 1,
+    "forks": 0,
+    "diskUsage": 223,
+    "defaultBranch": "main",
+    "totals": {
+      "commits": 8,
+      "additions": 12077,
+      "deletions": 1219,
+      "releases": 2,
+      "issues": 0,
+      "pullRequests": 0,
+      "stars": 1,
+      "forks": 0
+    },
+    "languages": [
+      {
+        "name": "Python",
+        "bytes": 197221,
+        "pct": 0.8117660617485687,
+        "color": "#3572A5"
+      },
+      {
+        "name": "CSS",
+        "bytes": 13676,
+        "pct": 0.056290722897021236,
+        "color": "#663399"
+      },
+      {
+        "name": "HTML",
+        "bytes": 11438,
+        "pct": 0.04707906467506061,
+        "color": "#e34c26"
+      },
+      {
+        "name": "JavaScript",
+        "bytes": 10205,
+        "pct": 0.0420040090058571,
+        "color": "#f1e05a"
+      },
+      {
+        "name": "PowerShell",
+        "bytes": 5811,
+        "pct": 0.023918206402061305,
+        "color": "#012456"
+      },
+      {
+        "name": "Shell",
+        "bytes": 4339,
+        "pct": 0.017859421369565306,
+        "color": "#89e051"
+      },
+      {
+        "name": "Batchfile",
+        "bytes": 263,
+        "pct": 0.001082513901865793,
+        "color": "#C1F12E"
+      }
+    ],
+    "firstCommitAt": "2026-10-16T13:41:50Z",
+    "lastCommitAt": "2026-10-17T11:37:35Z"
+  },
+  {
+    "id": "R_kgDOVf0THA",
+    "name": "ics-lite",
+    "nameWithOwner": "Jimmy-xuzimo/ics-lite",
+    "description": "ICS Lite · 轻订日历：约 41 KB 的原生安卓 ICS 订阅工具，手动同步到系统日历，无账号、无广告、无后台服务。",
+    "url": "https://github.com/Jimmy-xuzimo/ics-lite",
+    "homepageUrl": "https://jimmy-xuzimo.github.io/ics-lite/",
+    "createdAt": "2026-11-02T07:32:47Z",
+    "pushedAt": "2026-11-05T03:00:26Z",
+    "isFork": false,
+    "isArchived": false,
+    "primaryLanguage": {
+      "name": "Java",
+      "color": "#b07219"
+    },
+    "topics": [
+      "android",
+      "calendar",
+      "icalendar",
+      "ics",
+      "java",
+      "lightweight"
+    ],
+    "stars": 0,
+    "forks": 0,
+    "diskUsage": 334,
+    "defaultBranch": "main",
+    "totals": {
+      "commits": 2,
+      "additions": 1837,
+      "deletions": 26,
+      "releases": 1,
+      "issues": 0,
+      "pullRequests": 0,
+      "stars": 0,
+      "forks": 0
+    },
+    "languages": [
+      {
+        "name": "Java",
+        "bytes": 75042,
+        "pct": 0.7335268760446908,
+        "color": "#b07219"
+      },
+      {
+        "name": "HTML",
+        "bytes": 13975,
+        "pct": 0.1366040096575858,
+        "color": "#e34c26"
+      },
+      {
+        "name": "PowerShell",
+        "bytes": 10386,
+        "pct": 0.10152194950294713,
+        "color": "#012456"
+      },
+      {
+        "name": "Python",
+        "bytes": 2565,
+        "pct": 0.02507257851675904,
+        "color": "#3572A5"
+      },
+      {
+        "name": "JavaScript",
+        "bytes": 335,
+        "pct": 0.0032745862780172623,
+        "color": "#f1e05a"
+      }
+    ],
+    "firstCommitAt": "2026-11-02T07:32:29Z",
+    "lastCommitAt": "2026-11-05T03:00:14Z"
+  },
+  {
+    "id": "R_kgDOViJosQ",
+    "name": "Chronos-Widgets",
+    "nameWithOwner": "Jimmy-xuzimo/Chronos-Widgets",
+    "description": "Native Windows desktop widgets for a self-hosted Chronos workspace. Timetable, devices, services and daily updates.",
+    "url": "https://github.com/Jimmy-xuzimo/Chronos-Widgets",
+    "homepageUrl": "https://jimmy-xuzimo.github.io/Chronos-Widgets/",
+    "createdAt": "2026-11-04T03:05:39Z",
+    "pushedAt": "2026-11-04T09:36:03Z",
+    "isFork": false,
+    "isArchived": false,
+    "primaryLanguage": {
+      "name": "C#",
+      "color": "#7355dd"
+    },
+    "topics": [],
+    "stars": 0,
+    "forks": 0,
+    "diskUsage": 1472,
+    "defaultBranch": "main",
+    "totals": {
+      "commits": 6,
+      "additions": 7405,
+      "deletions": 115,
+      "releases": 4,
+      "issues": 0,
+      "pullRequests": 0,
+      "stars": 0,
+      "forks": 0
+    },
+    "languages": [
+      {
+        "name": "C#",
+        "bytes": 237980,
+        "pct": 0.8967416903117381,
+        "color": "#7355dd"
+      },
+      {
+        "name": "HTML",
+        "bytes": 12683,
+        "pct": 0.04779130539635169,
+        "color": "#e34c26"
+      },
+      {
+        "name": "Inno Setup",
+        "bytes": 5581,
+        "pct": 0.021029983081056434,
+        "color": "#264b99"
+      },
+      {
+        "name": "Python",
+        "bytes": 3992,
+        "pct": 0.015042410403077815,
+        "color": "#3572A5"
+      },
+      {
+        "name": "JavaScript",
+        "bytes": 2879,
+        "pct": 0.010848471831277814,
+        "color": "#f1e05a"
+      },
+      {
+        "name": "PowerShell",
+        "bytes": 2268,
+        "pct": 0.008546138976498118,
+        "color": "#012456"
+      }
+    ],
+    "firstCommitAt": "2026-11-04T03:05:37Z",
+    "lastCommitAt": "2026-11-04T09:35:14Z"
+  },
+  {
+    "id": "R_kgDOVi6XCw",
+    "name": "Chronos-Agents",
+    "nameWithOwner": "Jimmy-xuzimo/Chronos-Agents",
+    "description": "Unified self-hosted telemetry for Windows, Linux, macOS and Android. Authenticated agents, a lightweight Hub, and Chronos integration.",
+    "url": "https://github.com/Jimmy-xuzimo/Chronos-Agents",
+    "homepageUrl": null,
+    "createdAt": "2026-11-04T16:10:27Z",
+    "pushedAt": "2026-11-05T10:16:54Z",
+    "isFork": false,
+    "isArchived": false,
+    "primaryLanguage": {
+      "name": "Go",
+      "color": "#00ADD8"
+    },
+    "topics": [],
+    "stars": 0,
+    "forks": 0,
+    "diskUsage": 2221,
+    "defaultBranch": "main",
+    "totals": {
+      "commits": 14,
+      "additions": 13019,
+      "deletions": 131,
+      "releases": 1,
+      "issues": 0,
+      "pullRequests": 0,
+      "stars": 0,
+      "forks": 0
+    },
+    "languages": [
+      {
+        "name": "Go",
+        "bytes": 113365,
+        "pct": 0.41166153443918313,
+        "color": "#00ADD8"
+      },
+      {
+        "name": "Kotlin",
+        "bytes": 48544,
+        "pct": 0.17627748888824332,
+        "color": "#A97BFF"
+      },
+      {
+        "name": "Python",
+        "bytes": 31810,
+        "pct": 0.11551143131046103,
+        "color": "#3572A5"
+      },
+      {
+        "name": "JavaScript",
+        "bytes": 24580,
+        "pct": 0.08925718269761497,
+        "color": "#f1e05a"
+      },
+      {
+        "name": "HTML",
+        "bytes": 19662,
+        "pct": 0.07139848357203032,
+        "color": "#e34c26"
+      },
+      {
+        "name": "C#",
+        "bytes": 11203,
+        "pct": 0.04068137582430352,
+        "color": "#7355dd"
+      },
+      {
+        "name": "CSS",
+        "bytes": 9454,
+        "pct": 0.03433024431339511,
+        "color": "#663399"
+      },
+      {
+        "name": "Swift",
+        "bytes": 7442,
+        "pct": 0.027024082735380414,
+        "color": "#F05138"
+      },
+      {
+        "name": "PowerShell",
+        "bytes": 5677,
+        "pct": 0.020614850535978852,
+        "color": "#012456"
+      },
+      {
+        "name": "Shell",
+        "bytes": 3647,
+        "pct": 0.013243325683409348,
+        "color": "#89e051"
+      }
+    ],
+    "firstCommitAt": "2026-11-04T16:10:23Z",
+    "lastCommitAt": "2026-11-05T10:16:44Z"
+  }
+]

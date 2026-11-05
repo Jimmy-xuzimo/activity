@@ -1,0 +1,274 @@
+---
+import { events, meta, reposData } from '../lib/data.ts';
+import { fmtDateLong, fmtInt } from '../lib/format.ts';
+
+const repos = [...reposData].sort(
+  (a, b) =>
+    b.totals.commits - a.totals.commits ||
+    b.totals.releases - a.totals.releases ||
+    b.stars - a.stars ||
+    a.name.localeCompare(b.name),
+);
+
+const releasesByRepo = new Map<string, { ts: string; title: string; tag?: string; url: string | null }[]>();
+for (const event of events) {
+  if (event.type !== 'release' || !event.repo) continue;
+  const list = releasesByRepo.get(event.repo) ?? [];
+  list.push({ ts: event.ts, title: event.title, tag: event.meta?.tag, url: event.url });
+  releasesByRepo.set(event.repo, list);
+}
+for (const list of releasesByRepo.values()) list.sort((a, b) => b.ts.localeCompare(a.ts));
+
+const privateEvents = events.filter((event) => event.meta?.private);
+const privateCommits = privateEvents.filter((event) => event.type === 'commit').length;
+const privateReleases = privateEvents.filter((event) => event.type === 'release').length;
+
+const payload: Record<string, unknown> = {};
+for (const repo of repos) {
+  payload[repo.nameWithOwner] = {
+    name: repo.name,
+    nameWithOwner: repo.nameWithOwner,
+    description: repo.description,
+    url: repo.url,
+    homepageUrl: repo.homepageUrl,
+    createdAt: repo.createdAt,
+    pushedAt: repo.pushedAt,
+    isFork: repo.isFork,
+    isArchived: repo.isArchived,
+    defaultBranch: repo.defaultBranch,
+    totals: repo.totals,
+    languages: repo.languages.slice(0, 6),
+    topics: repo.topics.slice(0, 6),
+    releases: (releasesByRepo.get(repo.nameWithOwner) ?? []).slice(0, 5).map((release) => ({
+      ts: release.ts,
+      title: release.title,
+      tag: release.tag ?? null,
+    })),
+  };
+}
+const payloadJson = JSON.stringify(payload).replace(/</g, '\\u003c');
+---
+<section id="atlas" class="section shell" data-chapter="atlas" aria-labelledby="atlas-title">
+  <header class="sec-head reveal">
+    <div class="sec-head__left">
+      <span class="sec-head__index">
+        <span class="label">04 / Atlas</span>
+        <span class="sec-head__rule" aria-hidden="true"></span>
+      </span>
+      <h2 id="atlas-title" class="section-heading">仓库志</h2>
+    </div>
+    <p class="sec-head__note note">
+      {repos.length} 个公开仓库，按提交量排序。点开任意一张卡片，能看到它的语言构成、版本与全部数字。
+    </p>
+  </header>
+
+  <div class="atlas reveal">
+    {
+      repos.map((repo, index) => (
+        <button class="repo-card" type="button" data-repo={repo.nameWithOwner}>
+          <div class="repo-card__top">
+            <span class="repo-card__index">{String(index + 1).padStart(2, '0')}</span>
+            {repo.isArchived ? (
+              <span class="repo-card__flag">archived</span>
+            ) : repo.isFork ? (
+              <span class="repo-card__flag">fork</span>
+            ) : (
+              <span />
+            )}
+          </div>
+          <div class="repo-card__name">{repo.name}</div>
+          <div class="repo-card__desc">{repo.description?.trim() || '没有填写描述。'}</div>
+          <div class="repo-card__foot">
+            <span class="repo-card__lang">
+              <span
+                class="lang-row__dot"
+                style={`background:${repo.primaryLanguage?.color ?? 'var(--rule)'}`}
+              />
+              {repo.primaryLanguage?.name ?? '—'}
+            </span>
+            <span class="repo-card__stat">
+              <span>{fmtInt(repo.totals.commits)} commits</span>
+              <span>{fmtInt(repo.stars)} ★</span>
+            </span>
+          </div>
+          <span class="repo-card__arrow" aria-hidden="true">↗</span>
+        </button>
+      ))
+    }
+
+    <div class="repo-card repo-card--private">
+      <div class="repo-card__top">
+        <span class="repo-card__index">PRIVATE</span>
+        <span class="repo-card__flag">匿名</span>
+      </div>
+      <div class="repo-card__name">{meta.coverage.reposPrivate} 个私有项目</div>
+      <div class="private-note">
+        名称、描述与链接不公开。这里只保留匿名的活动痕迹 —— 每一次提交、每一个版本依然计入总数，但看不出是哪一个项目。
+      </div>
+      <div class="repo-card__foot">
+        <span>仅统计活动</span>
+        <span class="repo-card__stat">
+          <span>{fmtInt(privateCommits)} 次提交</span>
+          <span>{fmtInt(privateReleases)} 个版本</span>
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <div class="chronicle__foot">
+    <span class="label">Privacy</span>
+    <span class="note">
+      私有项目在数据管道里以哈希键替代仓库名，事件写出前会经过隐私校验：私有仓库名一旦出现在任何 JSON 字段，同步任务即失败并且不写入。
+    </span>
+  </div>
+</section>
+
+<dialog class="modal" id="repo-modal" aria-labelledby="modal-name">
+  <div class="modal__inner" id="modal-body"></div>
+</dialog>
+
+<script type="application/json" id="atlas-data" set:html={payloadJson}></script>
+
+<script>
+  type Release = { ts: string; title: string; tag: string | null };
+  type RepoPayload = {
+    name: string;
+    nameWithOwner: string;
+    description: string | null;
+    url: string;
+    homepageUrl: string | null;
+    createdAt: string;
+    pushedAt: string | null;
+    isFork: boolean;
+    isArchived: boolean;
+    defaultBranch: string | null;
+    totals: {
+      commits: number;
+      additions: number;
+      deletions: number;
+      releases: number;
+      issues: number;
+      pullRequests: number;
+      stars: number;
+      forks: number;
+    };
+    languages: { name: string; bytes: number; pct: number; color: string | null }[];
+    topics: string[];
+    releases: Release[];
+  };
+
+  const raw = document.getElementById('atlas-data')?.textContent ?? '{}';
+  const data = JSON.parse(raw) as Record<string, RepoPayload>;
+  const dialog = document.getElementById('repo-modal') as HTMLDialogElement | null;
+  const body = document.getElementById('modal-body');
+
+  const esc = (value: unknown): string =>
+    String(value ?? '').replace(
+      /[&<>"']/g,
+      (char) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[char] ?? char,
+    );
+  const fmt = new Intl.NumberFormat('en-US');
+  const fmtDate = (iso: string | null): string => (iso ? iso.slice(0, 10).replace(/-/g, '.') : '—');
+
+  // A release title usually already contains its version, so only append the tag when it adds information.
+  const tagSuffix = (title: string, tag: string | null): string => {
+    if (!tag) return '';
+    const version = tag
+      .split(/-(?=v\d)/)
+      .pop()!
+      .replace(/^v/i, '');
+    return title.includes(version) ? '' : ` · ${esc(tag)}`;
+  };
+
+  const render = (repo: RepoPayload): string => {
+    const langBar = repo.languages
+      .map(
+        (lang) =>
+          `<i style="width:${(lang.pct * 100).toFixed(2)}%;background:${esc(lang.color ?? '#3a3d42')}"></i>`,
+      )
+      .join('');
+    const langRows = repo.languages
+      .map(
+        (lang) => `
+        <div class="lang-row">
+          <span class="lang-row__dot" style="background:${esc(lang.color ?? '#3a3d42')}"></span>
+          <span class="lang-row__name">${esc(lang.name)}</span>
+          <span>${(lang.pct * 100).toFixed(1)}%</span>
+        </div>`,
+      )
+      .join('');
+    const releases = repo.releases.length
+      ? `<div class="modal__releases">${repo.releases
+          .map(
+            (release) => `
+          <div class="modal__release">
+            <time>${fmtDate(release.ts)}</time>
+            <span>${esc(release.title)}${tagSuffix(release.title, release.tag)}</span>
+          </div>`,
+          )
+          .join('')}</div>`
+      : '<p class="note">还没有发布过版本。</p>';
+
+    const flags = [
+      repo.isArchived ? '已归档' : '',
+      repo.isFork ? 'fork 自其他项目' : '',
+      repo.topics.map((topic) => `#${topic}`).join(' '),
+    ]
+      .filter(Boolean)
+      .join(' · ');
+
+    return `
+      <div class="modal__head">
+        <div>
+          <div class="label" style="margin-bottom:8px">Repository</div>
+          <h3 class="modal__name" id="modal-name">${esc(repo.name)}</h3>
+        </div>
+        <button class="modal__close" type="button" data-close>关闭 / ESC</button>
+      </div>
+      <p class="modal__desc">${esc(repo.description?.trim() || '没有填写描述。')}</p>
+      ${flags ? `<p class="note" style="margin:-12px 0 20px">${esc(flags)}</p>` : ''}
+      <div class="modal__grid">
+        <div class="modal__stat"><dt>Commits</dt><dd>${fmt.format(repo.totals.commits)}</dd></div>
+        <div class="modal__stat"><dt>Releases</dt><dd>${fmt.format(repo.totals.releases)}</dd></div>
+        <div class="modal__stat"><dt>Lines added</dt><dd>+${fmt.format(repo.totals.additions)}</dd></div>
+        <div class="modal__stat"><dt>Lines removed</dt><dd>−${fmt.format(repo.totals.deletions)}</dd></div>
+      </div>
+      <div class="modal__section-label label">Languages</div>
+      ${langBar ? `<div class="lang-bar">${langBar}</div>` : '<p class="note">没有可统计的语言。</p>'}
+      ${langRows ? `<div class="lang-list" style="margin-bottom:24px">${langRows}</div>` : ''}
+      <div class="modal__section-label label">Releases · ${repo.releases.length}${
+        repo.totals.releases > repo.releases.length ? ` / ${repo.totals.releases}` : ''
+      }</div>
+      ${releases}
+      <div class="modal__actions">
+        <a class="btn btn--primary" href="${esc(repo.url)}" target="_blank" rel="noopener">在 GitHub 打开 ↗</a>
+        ${repo.homepageUrl ? `<a class="btn" href="${esc(repo.homepageUrl)}" target="_blank" rel="noopener">主页 ↗</a>` : ''}
+        <span class="note" style="margin-left:auto">创建于 ${fmtDate(repo.createdAt)} · 最近 push ${fmtDate(repo.pushedAt)}</span>
+      </div>`;
+  };
+
+  const open = (slug: string) => {
+    const repo = data[slug];
+    if (!repo || !dialog || !body) return;
+    body.innerHTML = render(repo);
+    body.querySelector<HTMLButtonElement>('[data-close]')?.addEventListener('click', () => dialog.close());
+    if (typeof dialog.showModal === 'function') dialog.showModal();
+    else dialog.setAttribute('open', '');
+  };
+
+  document.querySelectorAll<HTMLButtonElement>('[data-repo]').forEach((card) => {
+    card.addEventListener('click', () => open(card.dataset.repo ?? ''));
+  });
+
+  if (dialog) {
+    dialog.addEventListener('click', (event) => {
+      const box = dialog.getBoundingClientRect();
+      const inside =
+        event.clientX >= box.left &&
+        event.clientX <= box.right &&
+        event.clientY >= box.top &&
+        event.clientY <= box.bottom;
+      if (!inside) dialog.close();
+    });
+  }
+</script>
