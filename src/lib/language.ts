@@ -34,7 +34,7 @@ function translate(root: Node) {
   while (walker.nextNode()) nodes.push(walker.currentNode as Text);
   for (const node of nodes) {
     const parent = node.parentElement;
-    if (!parent || parent.closest('.time-explorer, script, style, .event__title, .repo-card__desc, .modal__desc, .commit-row__msg, .commit-summary__preview, .modal__release')) { if (node.data.trim() !== '没有填写描述。') continue; }
+    if (!parent || parent.closest('[data-bilingual], .time-explorer, script, style, .event__title, .repo-card__desc, .modal__desc, .commit-row__msg, .commit-summary__preview, .modal__release')) { if (node.data.trim() !== '没有填写描述。') continue; }
     const original = originals.get(node) ?? node.data;
     if (!originals.has(node)) originals.set(node, original);
     let value = original; if (/^[一二三四五六日]$/.test(original.trim())) { const names:Record<string,string>={一:'Mon',二:'Tue',三:'Wed',四:'Thu',五:'Fri',六:'Sat',日:'Sun'}; if (lang === 'en') { node.data=names[original.trim()]; continue; } }
