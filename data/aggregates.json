@@ -1,6 +1,6 @@
 {
   "totals": {
-    "commits": 297,
+    "commits": 303,
     "repos": 31,
     "releases": 35,
     "prsOpened": 96,
@@ -9,9 +9,9 @@
     "issueComments": 82,
     "starsReceived": 27,
     "forksReceived": 1,
-    "additions": 310068,
-    "deletions": 60591,
-    "net": 249477
+    "additions": 316932,
+    "deletions": 69180,
+    "net": 247752
   },
   "byMonth": [
     {
@@ -100,10 +100,10 @@
     },
     {
       "month": "2026-11",
-      "commits": 47,
-      "additions": 70316,
-      "deletions": 19281,
-      "events": 68
+      "commits": 53,
+      "additions": 77180,
+      "deletions": 27870,
+      "events": 74
     }
   ],
   "byWeekdayHour": [
@@ -232,8 +232,8 @@
       1,
       4,
       7,
+      4,
       3,
-      0,
       1,
       1
     ],
@@ -252,7 +252,7 @@
       0,
       2,
       0,
-      0,
+      2,
       0,
       0,
       5,
@@ -293,62 +293,62 @@
   "byLanguage": [
     {
       "name": "TypeScript",
-      "bytes": 53676175,
-      "pct": 0.566030293467971,
+      "bytes": 53692480,
+      "pct": 0.5660221715898184,
       "color": "#3178c6"
     },
     {
       "name": "Python",
       "bytes": 19990605,
-      "pct": 0.21080652663406602,
+      "pct": 0.21073948630225833,
       "color": "#3572A5"
     },
     {
       "name": "Rust",
       "bytes": 7355477,
-      "pct": 0.07756556432918163,
+      "pct": 0.07754089706079813,
       "color": "#dea584"
     },
     {
       "name": "JavaScript",
       "bytes": 4069379,
-      "pct": 0.04291274088741231,
+      "pct": 0.0428990938507963,
       "color": "#f1e05a"
     },
     {
       "name": "Swift",
       "bytes": 3268355,
-      "pct": 0.0344657185391379,
+      "pct": 0.0344547578101522,
       "color": "#F05138"
     },
     {
       "name": "Kotlin",
       "bytes": 2058603,
-      "pct": 0.021708544996435486,
+      "pct": 0.02170164128200662,
       "color": "#A97BFF"
     },
     {
       "name": "CSS",
-      "bytes": 986833,
-      "pct": 0.010406430275515686,
+      "bytes": 1002015,
+      "pct": 0.010563168366698126,
       "color": "#663399"
     },
     {
       "name": "HTML",
       "bytes": 922339,
-      "pct": 0.009726322988680824,
+      "pct": 0.009723229840044294,
       "color": "#e34c26"
     },
     {
       "name": "Go",
       "bytes": 701772,
-      "pct": 0.007400382219999934,
+      "pct": 0.007398028763076878,
       "color": "#00ADD8"
     },
     {
       "name": "MDX",
       "bytes": 680075,
-      "pct": 0.007171581280339561,
+      "pct": 0.007169300586300832,
       "color": "#fcb32c"
     }
   ],
@@ -366,12 +366,12 @@
     {
       "repo": "Jimmy-xuzimo/Jimmy-xuzimo",
       "name": "Jimmy-xuzimo",
-      "commits": 43,
-      "additions": 976,
-      "deletions": 2534,
+      "commits": 44,
+      "additions": 993,
+      "deletions": 2547,
       "stars": 1,
       "releases": 0,
-      "lastActivityAt": "2026-11-02T09:04:15Z"
+      "lastActivityAt": "2026-11-05T13:15:59Z"
     },
     {
       "repo": "Jimmy-xuzimo/ciyu-vocab",
@@ -494,6 +494,16 @@
       "lastActivityAt": "2026-11-01T16:45:21Z"
     },
     {
+      "repo": "Jimmy-xuzimo/activity",
+      "name": "activity",
+      "commits": 5,
+      "additions": 6847,
+      "deletions": 8576,
+      "stars": 0,
+      "releases": 0,
+      "lastActivityAt": "2026-11-06T06:21:26Z"
+    },
+    {
       "repo": "Jimmy-xuzimo/ics-lite",
       "name": "ics-lite",
       "commits": 2,
@@ -582,23 +592,13 @@
       "stars": 0,
       "releases": 0,
       "lastActivityAt": null
-    },
-    {
-      "repo": "Jimmy-xuzimo/activity",
-      "name": "activity",
-      "commits": 0,
-      "additions": 0,
-      "deletions": 0,
-      "stars": 0,
-      "releases": 0,
-      "lastActivityAt": null
     }
   ],
   "streaks": {
-    "longest": 13,
+    "longest": 14,
     "longestStart": "2026-10-24",
-    "longestEnd": "2026-11-05",
-    "current": 13
+    "longestEnd": "2026-11-06",
+    "current": 14
   },
   "peakDay": {
     "date": "2026-10-17",
@@ -613,7 +613,7 @@
   "eventTypes": [
     {
       "type": "commit",
-      "count": 297
+      "count": 303
     },
     {
       "type": "pr_opened",

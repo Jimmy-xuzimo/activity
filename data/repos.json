@@ -230,7 +230,7 @@
     ],
     "stars": 2,
     "forks": 0,
-    "diskUsage": 17246,
+    "diskUsage": 17280,
     "defaultBranch": "main",
     "totals": {
       "commits": 18,
@@ -309,7 +309,7 @@
     "url": "https://github.com/Jimmy-xuzimo/Jimmy-xuzimo",
     "homepageUrl": null,
     "createdAt": "2026-01-05T13:40:13Z",
-    "pushedAt": "2026-11-05T09:40:33Z",
+    "pushedAt": "2026-11-05T13:15:59Z",
     "isFork": false,
     "isArchived": false,
     "primaryLanguage": {
@@ -319,12 +319,12 @@
     "topics": [],
     "stars": 1,
     "forks": 0,
-    "diskUsage": 706,
+    "diskUsage": 709,
     "defaultBranch": "main",
     "totals": {
-      "commits": 43,
-      "additions": 976,
-      "deletions": 2534,
+      "commits": 44,
+      "additions": 993,
+      "deletions": 2547,
       "releases": 0,
       "issues": 0,
       "pullRequests": 0,
@@ -340,7 +340,7 @@
       }
     ],
     "firstCommitAt": "2026-01-05T13:40:14Z",
-    "lastCommitAt": "2026-11-02T09:04:15Z"
+    "lastCommitAt": "2026-11-05T13:15:59Z"
   },
   {
     "id": "R_kgDORYpkMA",
@@ -1488,7 +1488,7 @@
     "topics": [],
     "stars": 0,
     "forks": 0,
-    "diskUsage": 1472,
+    "diskUsage": 1500,
     "defaultBranch": "main",
     "totals": {
       "commits": 7,
@@ -1559,7 +1559,7 @@
     "topics": [],
     "stars": 0,
     "forks": 0,
-    "diskUsage": 2361,
+    "diskUsage": 2396,
     "defaultBranch": "main",
     "totals": {
       "commits": 18,
@@ -1644,7 +1644,7 @@
     "url": "https://github.com/Jimmy-xuzimo/activity",
     "homepageUrl": "https://jimmy-xuzimo.github.io/activity/",
     "createdAt": "2026-11-05T11:30:41Z",
-    "pushedAt": "2026-11-05T12:52:28Z",
+    "pushedAt": "2026-11-06T06:21:26Z",
     "isFork": false,
     "isArchived": false,
     "primaryLanguage": {
@@ -1654,12 +1654,12 @@
     "topics": [],
     "stars": 0,
     "forks": 0,
-    "diskUsage": 701,
+    "diskUsage": 778,
     "defaultBranch": "main",
     "totals": {
-      "commits": 0,
-      "additions": 0,
-      "deletions": 0,
+      "commits": 5,
+      "additions": 6847,
+      "deletions": 8576,
       "releases": 0,
       "issues": 0,
       "pullRequests": 0,
@@ -1669,30 +1669,30 @@
     "languages": [
       {
         "name": "TypeScript",
-        "bytes": 64453,
-        "pct": 0.39357966793070387,
+        "bytes": 80758,
+        "pct": 0.4164329029330473,
         "color": "#3178c6"
       },
       {
         "name": "Astro",
-        "bytes": 59839,
-        "pct": 0.36540446137969357,
+        "bytes": 58519,
+        "pct": 0.3017563219339136,
         "color": "#ff5a03"
       },
       {
         "name": "CSS",
-        "bytes": 39059,
-        "pct": 0.23851222207973816,
+        "bytes": 54241,
+        "pct": 0.27969658842456996,
         "color": "#663399"
       },
       {
         "name": "JavaScript",
         "bytes": 410,
-        "pct": 0.0025036486098643754,
+        "pct": 0.0021141867084691224,
         "color": "#f1e05a"
       }
     ],
-    "firstCommitAt": null,
-    "lastCommitAt": null
+    "firstCommitAt": "2026-11-05T12:59:28Z",
+    "lastCommitAt": "2026-11-06T06:21:26Z"
   }
 ]
